@@ -1,4 +1,5 @@
 Publication::Application.routes.draw do
+
   resources :product_subscriptions
 
   #resources :subscriptions
