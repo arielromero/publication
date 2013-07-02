@@ -1,0 +1,60 @@
+<h3><%= t('member.show.title')%></h3>
+<div class="line-separator"></div>
+<div class="detail">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <p id="notice"><%= notice %></p>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span2">
+        <b><%= label_for('member.first_name')%>:</b>
+      </div>
+      <div class="span10">
+        <%= @member.first_name  %>
+      </div>
+    </div>
+
+    <div class="row-fluid">
+      <div class="span2">
+        <b><%= label_for('member.last_name')%>:</b>
+      </div>
+      <div class="span10">
+        <%= @member.last_name  %>
+      </div>
+    </div>
+
+    <div class="row-fluid">
+      <div class="span2">
+        <b><%= label_for('member.phone')%>:</b>
+      </div>
+      <div class="span10">
+        <%= @member.phone  %>
+      </div>
+    </div>
+
+    <div class="row-fluid">
+      <div class="span2">
+        <b><%= label_for('member.email')%>:</b>
+      </div>
+      <div class="span10">
+        <%= @member.email  %>
+      </div>
+    </div>
+
+    <div class="row-fluid">
+      <div class="span2">
+        <b><%= label_for('member.address')%>:</b>
+      </div>
+      <div class="span10">
+        <%= @member.address  %>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="btns">
+  <%= link_to raw('<i class="icon-pencil icon-white"></i> ' + t('action.edit')), edit_member_path(@member), :class => 'btn btn-primary'%> 
+  <%= link_to raw('<i class="icon-list icon-white"></i> ' + t('action.show_all')), members_path, :class => 'btn btn-inverse' %> 
+  </div>
+</div>

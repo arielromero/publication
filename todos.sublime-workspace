@@ -1,0 +1,533 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"de",
+				"debit"
+			],
+			[
+				"total",
+				"total_debits"
+			],
+			[
+				"acc",
+				"accounting_entry_head"
+			],
+			[
+				"aco",
+				"accounting_entry_head"
+			],
+			[
+				"acoun",
+				"accounting_entry_head"
+			],
+			[
+				"acount",
+				"account_id"
+			],
+			[
+				"cod",
+				"cod_ejercicio"
+			],
+			[
+				"ac",
+				"accounting_period"
+			],
+			[
+				"ty",
+				"type_name"
+			],
+			[
+				"nr",
+				"nro_inicio"
+			],
+			[
+				"atr",
+				"alias_attribute"
+			],
+			[
+				"an",
+				"analytic_number"
+			],
+			[
+				"no",
+				"nom_abre"
+			],
+			[
+				"abre",
+				"abbreviation"
+			],
+			[
+				"monto",
+				"monto_haber"
+			],
+			[
+				"orde",
+				"order"
+			],
+			[
+				"mon",
+				"month"
+			],
+			[
+				"to",
+				"to_i"
+			],
+			[
+				"actr",
+				"actual_number"
+			],
+			[
+				"nro",
+				"nro_actual"
+			],
+			[
+				"accounting_entry_de",
+				"accounting_entry_detail"
+			],
+			[
+				"par",
+				"params"
+			],
+			[
+				"depart",
+				"department_id"
+			],
+			[
+				"mono",
+				"monto_haber"
+			],
+			[
+				"des",
+				"descripcion"
+			],
+			[
+				"desc",
+				"desc_mov"
+			],
+			[
+				"accountin",
+				"accounting_entry_head"
+			],
+			[
+				"account",
+				"accounting_entry_head"
+			],
+			[
+				"Ac",
+				"AccountingEntryHead"
+			],
+			[
+				"mont",
+				"month"
+			],
+			[
+				"tot",
+				"total_items"
+			],
+			[
+				"tota",
+				"total_credits"
+			],
+			[
+				"fecha",
+				"fecha_comp"
+			],
+			[
+				"create",
+				"created_at"
+			],
+			[
+				"mo",
+				"month"
+			],
+			[
+				"co",
+				"cod_ejercicio"
+			],
+			[
+				"Com",
+				"Company"
+			],
+			[
+				"nam",
+				"name"
+			],
+			[
+				"type_",
+				"type_name"
+			],
+			[
+				"type",
+				"type"
+			],
+			[
+				"acou",
+				"accounting_period"
+			],
+			[
+				"comp",
+				"company_id"
+			],
+			[
+				"com",
+				"company_id"
+			],
+			[
+				"depar",
+				"deparments"
+			],
+			[
+				"Acc",
+				"AccountingDb"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 849,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Publication</title>\n  <title>Taken</title>\n  <%= stylesheet_link_tag    \"application\" %>\n  <%= javascript_include_tag \"application\" %>\n  <%= csrf_meta_tags %>\n</head>\n<body>\n\n<%= yield %>\n\n</body>\n</html>\n",
+			"file": "app/views/layouts/application.html.erb",
+			"file_size": 238,
+			"file_write_time": 1345579144000000,
+			"settings":
+			{
+				"buffer_size": 244,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/ariel/Dropbox/Programacion/Proyectos/rails/taken/Gemfile",
+			"settings":
+			{
+				"buffer_size": 701,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/ariel/Dropbox/Programacion/Proyectos/rails/taken/app/views/layouts/application.html.erb",
+			"settings":
+			{
+				"buffer_size": 284,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/ariel/Dropbox/Programacion/Proyectos/rails/taken/app/assets/stylesheets/main.css.scss",
+			"settings":
+			{
+				"buffer_size": 276,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 334.0,
+		"selected_items":
+		[
+			[
+				"pac",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/ariel/Dropbox/Programacion/Proyectos/rails/publication/app/assets/stylesheets/main.css.scss",
+		"/home/ariel/Dropbox/Programacion/Proyectos/rails/publication/Gemfile",
+		"/home/ariel/Dropbox/Sistemas/money/app/controllers/accounting_entry_heads_controller.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/models/accounting_entry_head.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/models/type_month.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/controllers/accounting_entry_details_controller.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/models/accounting_entry_detail.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/controllers/accounting_entry_types_controller.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/models/accounting_entry_type.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/models/accounting_period.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/models/company.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/models/department.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/models/account.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/models/accounting_db.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/models/accounting_db (Copia conflictiva de Desarrollo Web UAP 2012-08-16).rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/controllers/accounting_periods_controller.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/controllers/type_months_controller.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/controllers/departments_controller.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/controllers/accounts_controller.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/models/save_progress.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/controllers/companies_controller.rb",
+		"/home/ariel/Dropbox/Sistemas/money/app/views/departments/show.rabl",
+		"/home/ariel/Dropbox/Sistemas/money/app/views/departments/index.rabl",
+		"/home/ariel/Dropbox/Sistemas/money/config/routes.rb",
+		"/home/ariel/Dropbox/Sistemas/money/config/database.yml",
+		"/home/ariel/Dropbox/Sistemas/money/app/views/companies/show.rabl",
+		"/home/ariel/Dropbox/Sistemas/money/app/views/companies/index.rabl",
+		"/home/ariel/Dropbox/Sistemas/money/Gemfile",
+		"/home/ariel/Dropbox/Sistemas/money/.rvmrc",
+		"/home/ariel/Dropbox/Sistemas/money/app/views/accounting_entry_types/months.rabl",
+		"/home/ariel/Dropbox/Sistemas/money/app/views/accounting_entry_types/show.rabl"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 849,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								651,
+								651
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 340.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/layouts/application.html.erb",
+					"settings":
+					{
+						"buffer_size": 244,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								226,
+								226
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "/home/ariel/Dropbox/Programacion/Proyectos/rails/taken/Gemfile",
+					"settings":
+					{
+						"buffer_size": 701,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								395,
+								395
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 322.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/ariel/Dropbox/Programacion/Proyectos/rails/taken/app/views/layouts/application.html.erb",
+					"settings":
+					{
+						"buffer_size": 284,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								284,
+								284
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/ariel/Dropbox/Programacion/Proyectos/rails/taken/app/assets/stylesheets/main.css.scss",
+					"settings":
+					{
+						"buffer_size": 276,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.5,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 363.0,
+	"status_bar_visible": true
+}

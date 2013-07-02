@@ -1,0 +1,166 @@
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700);
+
+body {
+  /*background-color: #F1F0F2; */
+  background-image: url(fondo.png);
+  background-repeat: repeat;
+  background-color: #fff;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+.row{
+  display: table;
+  margin-left: -30px;
+}
+
+[class*="span"]{
+  float: left;
+  margin-left: 30px;
+}
+.span6{
+  width: 570px;
+}
+
+.head-btns{
+  margin-top: 30px;
+  padding-left: 5px;
+}
+
+.head-btns > a {
+  margin-left: 5px;
+  margin-right: 5px;
+ }
+
+
+.app-logo{
+  background-image: url('logo_publi.png');
+  height: 80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+
+}
+.detail {
+  border-radius: 5px;
+  /*border-style:solid;
+  border-width:0px;*/
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+  /*background-color: #FAFAFA;*/
+  padding-bottom: 10px;
+  /*background: -webkit-gradient(linear, left top, left bottom, 
+                             from(#EFF5FB), to(white));, 
+                             color-stop(0.5, white), color-stop(0.5, #66cc00));*/
+  /*#0B173B*/
+
+}
+
+.titles {
+  border-radius: 5px;
+  /*border-style:solid;
+  border-width:0px;*/
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 10px;
+  /*background: -webkit-gradient(linear, left top, left bottom, 
+                             from(#EFF5FB), to(white));, 
+                             color-stop(0.5, white), color-stop(0.5, #66cc00));*/
+  /*#0B173B*/
+
+}
+
+h3 {
+  color: #0B10A1;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+th {
+  color: #08298A;
+}
+
+li {
+  color: #5882FA;
+}
+
+.btns {
+  padding-top:10px;
+  float:right;
+}
+
+.navbar
+{
+  
+  box-shadow: 2px 2px 2px #F5F5F5;
+}
+.navbar-inner {
+  border-radius: 10px;
+  margin-top:15px;
+  box-shadow: 2px 2px 2px #F5F5F5;
+
+ }
+
+ .btns > a {
+  margin-left: 5px;
+  margin-right: 5px;
+ }
+
+.navbar .nav > li > a {
+  color: #ABC5DF;
+ }
+
+ .search_form{
+  position: relative;
+  
+ }
+
+.actions{
+  float: left;
+  margin-left: 3px;
+  padding-top: 5px;
+}
+
+.field{
+  position: relative;
+  float:left;
+
+}
+
+.index {
+    padding-top:5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-radius:  5px;
+        
+    margin-bottom: 5px;
+    /*background-color: #F2F2F2;*/
+ }
+
+#pie {
+    border-radius:  5px;
+    margin-left: 10px;
+    margin-right: 10px;    
+    margin-bottom: 10px;
+    background-color: #2E64FE;
+ }
+ 
+ .navbar .brand
+{
+  color: #D3E8ED;
+  height: 20px;
+  width: 100px;
+}
+
+.line-separator{
+  height:1px;
+  background-color:#E0E0E0;
+  color:#3D3D3D;
+  border-color: #E0E0E0;
+  box-shadow: 2px 2px 2px #F5F5F5;
+  border-bottom:1px solid #E0E0E0;
+  border-radius:  10px;
+}

@@ -1,0 +1,24 @@
+es:
+  product_subscription:
+    title: Materiales de la Suscripcion
+    index:
+      title: Materiales de la Suscripcion
+    new:
+      caption: Agregar
+      notice: El material fue agregado correctamente
+      title: Agregar Material
+    update:
+      caption: Guardar
+      link: Modificar
+      notice: El material fue actualizado correctamente
+      title: Modificar Datos
+    show:
+      link: Ver
+      title: Productos suscripcion
+    delete:
+      link: Elimnar
+  activerecord:
+    attributes:
+      product_subscription:
+        product: Material
+        total: Cantidad

@@ -1,0 +1,24 @@
+es:
+  product:
+    title: Materiales
+    index:
+      title: Lista de materiales
+    new:
+      caption: Agregar
+      notice: El material fue creado correctamente
+      title: Nuevo material
+    update:
+      caption: Guardar
+      link: Modificar
+      notice: El material fue actualizado correctamente
+      title: Modificar Datos
+    show:
+      link: Ver
+      title: Material
+    delete:
+      link: Elimnar
+  activerecord:
+    attributes:
+      product:
+        name: Nombre
+        numbers: Numeros

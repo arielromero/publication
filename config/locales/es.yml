@@ -1,0 +1,10 @@
+es:
+  helpers:
+    submit:
+      create: Agregar
+      update: Guardar
+  action:
+    back: Volver
+    show: Ver 
+    edit: Modificar
+    show_all: Ver Todos

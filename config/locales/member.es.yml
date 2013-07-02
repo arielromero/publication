@@ -1,0 +1,28 @@
+es:
+  member:
+    title: Miembros
+    index:
+      title: Lista de miembros
+    new:
+      caption: Nuevo
+      notice: El miembro fue creado correctamente
+      title: Nuevo miembro
+    update:
+      caption: Guardar
+      link: Modificar
+      notice: El miembro fue actualizado correctamente
+      title: Modificar Datos
+    show:
+      link: Ver
+      title: Datos Personales
+    delete:
+      link: Elimnar
+  activerecord:
+    attributes:
+      member:
+        first_name: Nombre
+        last_name: Apellido
+        full_name: Alumno
+        phone: Telefono
+        address: Direccion
+        email: Email

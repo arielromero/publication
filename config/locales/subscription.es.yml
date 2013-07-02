@@ -1,0 +1,28 @@
+es:
+  subscription:
+    title: Suscripciones
+    index:
+      title: Lista de suscripciones
+    new:
+      caption: Agregar
+      notice: La suscripcion fue creada correctamente
+      title: Nueva suscripcion
+    update:
+      caption: Guardar
+      link: Modificar
+      notice: La suscripcion fue actualizada correctamente
+      title: Modificar Datos
+    show:
+      link: Ver
+      title: Suscripcion
+    delete:
+      link: Elimnar
+    search:
+      caption: Buscar
+  activerecord:
+    attributes:
+      subscription:
+        created_at: Fecha
+        member: Miembro
+        campaign: Campaña
+        product_subscription: Materiales

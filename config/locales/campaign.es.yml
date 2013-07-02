@@ -1,0 +1,28 @@
+es:
+  campaign:
+    title: Campañas
+    index:
+      title: Lista de campañas
+    new:
+      caption: Agregar
+      notice: La campaña fue creada correctamente
+      title: Nueva campaña
+    update:
+      caption: Guardar
+      link: Modificar
+      notice: La campaña fue actualizada correctamente
+      title: Modificar Datos
+    show:
+      link: Ver
+      title: Campaña
+    delete:
+      link: Elimnar
+    subscriptions:
+      link: Suscripciones
+  activerecord:
+    attributes:
+      campaign:
+        name: Nombre
+        begin_at: Fecha de inicio
+        finish_at: Fecha de cierre
+        products: Materiales

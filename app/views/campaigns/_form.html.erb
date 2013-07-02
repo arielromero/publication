@@ -1,0 +1,29 @@
+<%= simple_form_for(@campaign, :html => {:class => "form-horizontal" }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :begin_at, :as => :string, :input_html => {:class => 'datepicker'} %>
+    <%= f.input :finish_at, :as => :string, :input_html => {:class => 'datepicker'}  %>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+          <h4>Materiales</h4>
+        </div> 
+        <div class="span8"> 
+          <label class="checkbox">
+            <%= f.collection_check_boxes :product_ids, Product.all, :id, :name  %>
+          </label>
+        </div>
+        <div class="span2">
+        </div>
+      </div>
+    </div>  
+  </div>
+
+</div>
+  <div class="btns">
+    <%= f.button :submit, :class => "btn btn-primary pull-right"  %>
+  </div>
+<% end %>

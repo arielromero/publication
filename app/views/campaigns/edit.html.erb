@@ -1,0 +1,10 @@
+<h3><%= t('campaign.update.title')%></h3>
+<div class="line-separator"></div>
+<div class="detail">
+
+  <%= render 'form' %>
+
+<div class="btns">
+      <%= link_to t('action.show'), @campaign, :class => "btn btn-primary pull-right"    %> 
+      <%= link_to t('action.back'), campaigns_path, :class => "btn btn-inverse pull-right"   %>
+</div>

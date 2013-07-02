@@ -1,0 +1,48 @@
+<h3><%= t('member.index.title')%></h3>
+<div class="line-separator"></div>
+<div class='index'>
+
+  <%= search_form_for @search do |f|%>
+  <div class='search_form'>
+    <div class='field'>
+      <%= f.label :last_name_cont, "Apellido contiene"%>
+      <%= f.text_field :last_name_cont %>
+    </div>
+    <div class ='actions'>
+      <%# f.submit 'Search', :class => 'btn btn-info'  %>
+      <br>
+      <button type="submit", class= 'btn btn-success pull-left'>
+        <i class='icon-search icon-white'></i> Buscar
+      </button>
+    </div>
+    <% end %>
+  </div>
+  <table class="table table-striped">
+    <tr>
+      <th><%= sort_link @search, :first_name, label_for('member.first_name')%></th>
+      <th><%= sort_link @search, :last_name, label_for('member.last_name')%></th>
+      <th><%= label_for('member.phone')%></th>
+      <th><%= label_for('member.email')%></th>
+      <th><%= label_for('member.address')%></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @members.each do |member| %>
+    <tr>
+      <td><%= link_to member.first_name, member %></td>
+      <td><%= link_to member.last_name, member %></td>
+      <td><%= member.phone %></td>
+      <td><%= member.email %></td>
+      <td><%= member.address %></td>
+      <td><i class="icon-pencil"></i><%= link_to t('member.update.link'), edit_member_path(member) %></td>
+      <td><i class="icon-trash"></i><%= link_to t('member.delete.link'), member, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+<div class="btns">
+   <%= link_to t('member.new.caption'), new_member_path, :class => "btn btn-primary pull-right"  %>
+</div>
+
+
