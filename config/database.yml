@@ -44,13 +44,13 @@ test:
 
 production:
   adapter: postgresql
-  encoding: latin1
+  encoding: UTF8
   reconnect: true
-  database: publications
+  database: d4vf5l2mknh6p4
   pool: 8
   #host: localhost
-  username: postgres
-  password: sistemas
-  host: localhost
+  username: krhmjatlkyxgtz
+  password: GuZlu5Fg7AAXvDb7K7vjPaybaG
+  host: ec2-54-225-89-245.compute-1.amazonaws.com
   port: 5432
   schema_search_path: 'public'
