@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Subscription:</b>
+  <%= @product_delivered.subscription_id %>
+</p>
+
+<p>
+  <b>Product received:</b>
+  <%= @product_delivered.product_received_id %>
+</p>
+
+<p>
+  <b>Delivered at:</b>
+  <%= @product_delivered.delivered_at %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @product_delivered.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_delivered_path(@product_delivered) %> |
+<%= link_to 'Back', product_delivereds_path %>

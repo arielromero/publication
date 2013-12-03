@@ -1,6 +1,8 @@
 Publication::Application.routes.draw do
 
 
+  resources :product_delivereds
+
   devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
   
   #devise_for :admins, :controllers => { :sessions => "admins/sessions" }
@@ -10,7 +12,15 @@ Publication::Application.routes.draw do
   #resources :subscriptions
 
   resources :campaigns do 
-    resources :subscriptions
+    resources :subscriptions do
+      member do
+        get 'delivered'
+      end
+      resources :product_delivereds
+    end
+    resources :product_receiveds
+
+    get 'list'
     
   end
 

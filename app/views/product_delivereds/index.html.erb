@@ -1,0 +1,55 @@
+<h4><%= t('product_delivered.index.title')%>: <%= @subscription.member.to_label %></h4>
+<div class="line-separator"></div>
+<div class='index'>
+  <div class="panel panel-success">
+    <div class="panel-heading"><h5>Productos para entregar</h5></div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <tr>
+          <th>Product</th>
+          <th>Description</th>
+          <th></th>
+        </tr>
+        <% @subscription.available_product_delivereds.each do |pd| %>
+          <tr>
+            <td><%= pd.product.name  %> </td>
+            <td><%= pd.description  %> </td>
+            <td><%= link_to 'Entregar', delivered_campaign_subscription_path(@subscription.campaign, @subscription, :product_received_id => pd.id)  %> </td>
+          </tr>
+        <% end  %>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel panel-info">
+    <div class="panel-heading"><h5>Productos Entregados</h5></div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <tr>
+          <th>Subscription</th>
+          <th>Product received</th>
+          <th>Delivered at</th>
+          <th>User</th>
+          <th></th>
+        </tr>
+
+      <% @product_delivereds.each do |product_delivered| %>
+        <tr>
+          <td><%= product_delivered.subscription_id %></td>
+          <td><%= product_delivered.product_received_id %></td>
+          <td><%= product_delivered.delivered_at %></td>
+          <td><%= product_delivered.user_id %></td>
+          <td><%= link_to 'Destroy', campaign_subscription_product_delivered_path(@subscription.campaign, @subscription, product_delivered), :method => :delete, :data => { :confirm => 'Are you sure?' }%></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="line-separator"></div>
+<div class='btns'>
+   <%= link_to t('action.back'),  campaign_subscriptions_path(@subscription.campaign), :class => "btn btn-primary pull-right" %>
+</div>
+
+

@@ -8,3 +8,5 @@ es:
     show: Ver 
     edit: Modificar
     show_all: Ver Todos
+  user:
+    login: Ingresar

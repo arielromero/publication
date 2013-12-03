@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-  before_filter :find_campaign, :only => [:index, :new, :create, :show, :edit, :update, :destroy]
+  before_filter :find_campaign, :only => [:index, :new, :create, :show, :edit, :update, :destroy, :delivered]
   # GET /subscriptions
   # GET /subscriptions.json
   def index
@@ -82,9 +82,24 @@ class SubscriptionsController < ApplicationController
     end
   end
 
-  def find_campaign
-    puts params[:campaign_id]
-    @campaign = Campaign.find params[:campaign_id]
+  def delivered
+    @subscription = Subscription.find params[:id]
+    product_delivered = ProductDelivered.new
+    product_delivered.subscription_id = @subscription.id
+    product_delivered.product_received_id = params[:product_received_id]
+    product_delivered.user_id = current_user.id
+    product_delivered.delivered_at = Time.now
+    product_delivered.save!
+
+    redirect_to campaign_subscription_product_delivereds_path(@campaign, @subscription), :notice => 'Entregado!!!' 
+
+
   end
+
+  private
+  
+    def find_campaign
+      @campaign = Campaign.find params[:campaign_id]
+    end
 
 end

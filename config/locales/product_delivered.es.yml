@@ -1,0 +1,26 @@
+es:
+  product_delivered:
+    title: Productos Entregados
+    index:
+      title: Entregas
+    new:
+      caption: Agregar
+      notice: El registro fue agregado correctamente
+      title: Agregar Material Recibido
+    update:
+      caption: Guardar
+      link: Modificar
+      notice: El registro fue actualizado correctamente
+      title: Modificar Datos
+    show:
+      link: Ver
+      title: Material Entrgado
+    delete:
+      link: Elimnar
+  activerecord:
+    attributes:
+      product_delivered:
+        product: Material
+        subscription: Suscripcion
+        description: Descripción
+        received_at: Recibido

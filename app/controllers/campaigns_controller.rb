@@ -10,6 +10,18 @@ class CampaignsController < ApplicationController
     end
   end
 
+  def list
+    #puts "#{params.inspect}"
+    @campaign = Campaign.find(params[:campaign_id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render :json => @campaign }
+      format.csv { send_data @campaign.to_csv }
+      format.xls { send_data @campaign.to_csv(col_sep: "\t") }
+    end 
+  end
+
   def add_product
     @campaign = Campaign.find(params[:id])
     @campaign.product_ids = params[:product_ids]

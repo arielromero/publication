@@ -1,0 +1,16 @@
+<%= simple_form_for [@campaign, @product_received], :html => {:class => "form-horizontal" } do |f|  %>
+  <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.association :product,  :collection => @campaign.products %>
+      <%= f.input :total %>
+      <%= f.association :campaign, :as => :hidden, :input_html => {:value => @campaign.id} %>
+      <%= f.input :description %>
+      <%= f.input :received_at, :as => :string, :input_html => {:class => 'datepicker'}%>
+      
+    </div>
+</div>
+<div class="btns">
+  <%= f.button :submit, :class => "btn btn-primary pull-right" %>
+</div>
+<% end %>

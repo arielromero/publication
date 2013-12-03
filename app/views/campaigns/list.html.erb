@@ -1,0 +1,27 @@
+<h3><%= t('campaign.list.title')%></h3>
+<div class="line-separator"></div>
+<div class='index'>
+  <table class="table table-striped">
+    <tr>
+      <th><%= t('campaign.list.head')%></th>
+      <% @campaign.products.each do |product| %>
+        <th> <%= product.abbreviation  %>  </th>
+      <% end %>
+    </tr>
+    <% @campaign.subscriptions.each do |subscription| %>
+    <tr>
+      <td><%= subscription.member.to_label  %> </td>
+      <% @campaign.products.each do |product| %>
+        <td> <%= subscription.total_product_subcription(product)  %> </td>
+      <% end %>
+    </tr>
+    <% end %>
+
+    <div>
+      <p>
+        Download:
+        <%= link_to "CSV", campaign_list_path(@campaign, format: "csv") %> |
+        <%= link_to "Excel", campaign_list_path(@campaign, format: "xls") %>
+      </p>
+    </div>
+</div>

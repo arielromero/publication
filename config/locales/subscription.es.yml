@@ -1,6 +1,10 @@
 es:
   subscription:
     title: Suscripciones
+    
+    delivered:
+      link: Entregas
+      title: Productos Entregados
     index:
       title: Lista de suscripciones
     new:
@@ -26,3 +30,4 @@ es:
         member: Miembro
         campaign: Campaña
         product_subscription: Materiales
+        product_delivered: Productos Entregados

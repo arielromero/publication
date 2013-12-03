@@ -19,6 +19,7 @@
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span6" id="product_subs">
+        <div id="product_subcriptions">
         <table class="table table-hover">
           <tr>
             <th><%= label_for('product_subscription.product')%></th>
@@ -33,10 +34,11 @@
           </tr>
           <% end %>
         </table>
+        </div>
       </div>
       
      <div class="span6" id="add_product_subs">
-          <%= simple_form_for @product_subscription, :html => { :class => 'form-horizontal' } do |f| %>
+          <%= simple_form_for @product_subscription, :html => { :class => 'form-horizontal' }, :method => :post  do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
@@ -46,7 +48,7 @@
           </div>
           <div class="line-separator"></div>
           <div class="btns">
-            <%= f.button :submit, :class => "btn btn-success btn-rigth left-right"  %>
+            <%= f.button :submit, :class => "btn btn-success btn-rigth left-right", :id => "add_product_subscription"  %>
           </div>
           <% end %>
         </div>

@@ -19,6 +19,11 @@ es:
       link: Elimnar
     subscriptions:
       link: Suscripciones
+    product_receiveds:
+      link: Productos Recibidos
+    list:
+      head: Nombre / Producto
+      title: Listado Suscripciones
   activerecord:
     attributes:
       campaign:

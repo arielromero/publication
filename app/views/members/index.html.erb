@@ -19,8 +19,8 @@
   </div>
   <table class="table table-striped">
     <tr>
-      <th><%= sort_link @search, :first_name, label_for('member.first_name')%></th>
       <th><%= sort_link @search, :last_name, label_for('member.last_name')%></th>
+      <th><%= sort_link @search, :first_name, label_for('member.first_name')%></th>
       <th><%= label_for('member.phone')%></th>
       <th><%= label_for('member.email')%></th>
       <th><%= label_for('member.address')%></th>
@@ -30,8 +30,8 @@
 
   <% @members.each do |member| %>
     <tr>
-      <td><%= link_to member.first_name, member %></td>
       <td><%= link_to member.last_name, member %></td>
+      <td><%= link_to member.first_name, member %></td>
       <td><%= member.phone %></td>
       <td><%= member.email %></td>
       <td><%= member.address %></td>

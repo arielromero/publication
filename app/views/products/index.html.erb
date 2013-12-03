@@ -1,25 +1,27 @@
-<h3><%= t('product.index.title')%></h3>
-<div class="line-separator"></div>
-<div class='index'>
+<div class="panel panel-info">
+  <div class="panel-heading"><h5><%= t('product.index.title')%></h5></div>
+  <div class="panel-body">
+     
 
-  <table class="table table-striped">
-    <tr>
-      <th><%= label_for('product.name')%></th>
-      <th><%= label_for('product.numbers')%></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
+    <table class="table table-striped">
+      <tr>
+        <th><%= label_for('product.name')%></th>
+        <th><%= label_for('product.numbers')%></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
 
-  <% @products.each do |product| %>
-    <tr>
-      <td><%= link_to product.name, product %></td>
-      <td><%= product.numbers %></td>
-      <td><i class="icon-pencil"></i><%= link_to t('product.update.link'), edit_product_path(product) %></td>
-      <td><i class="icon-trash"></i><%= link_to t('product.delete.link'), product, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-  </table>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.name, product %></td>
+        <td><%= product.numbers %></td>
+        <td><i class="icon-pencil"></i><%= link_to t('product.update.link'), edit_product_path(product) %></td>
+        <td><i class="icon-trash"></i><%= link_to t('product.delete.link'), product, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
 </div>
 
 <div class='btns'>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  product_id: 1
+  total: 1
+  campaign_id: 1
+  description: MyString
+  received_at: 2013-08-21 16:15:38
+
+two:
+  product_id: 1
+  total: 1
+  campaign_id: 1
+  description: MyString
+  received_at: 2013-08-21 16:15:38

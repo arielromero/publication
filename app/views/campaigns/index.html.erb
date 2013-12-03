@@ -10,16 +10,18 @@
       <th></th> 
       <th></th>
       <th></th>
+      <th></th>
     </tr>
 
   <% @campaigns.each do |campaign| %>
     <tr>
-      <td><%= link_to campaign.name, campaign %></td>
+      <td><%= link_to campaign.name, campaign_list_path(campaign) %></td>
       <td><%= campaign.begin_at.to_date %></td>
       <td><%= campaign.finish_at.to_date %></td>
       <td><i class="icon-pencil"></i><%= link_to t('campaign.update.link'), edit_campaign_path(campaign) %></td>
       <td><i class="icon-trash"></i><%= link_to t('campaign.delete.link'), campaign, :method => :delete, :data => { :confirm => 'Esta seguro de eliminar la campaña?' } %></td>
       <td><i class="icon-list-alt"></i><%= link_to t('campaign.subscriptions.link'), campaign_subscriptions_path(campaign) %></td>
+      <td><i class="icon-list-alt"></i><%= link_to t('campaign.product_receiveds.link'), campaign_product_receiveds_path(campaign) %></td>
     </tr>
   <% end %>
   </table>

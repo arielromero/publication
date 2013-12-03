@@ -12,7 +12,8 @@ gem 'pg'
 gem 'taps'
 gem 'json'
 gem 'ransack'
-gem 'devise'
+
+gem "devise", "~> 2.2.4"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,10 +29,13 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'bootstrap-sass'
+#gem 'bootstrap-sass'
+#gem 'sass-rails', '>= 3.2' # sass-rails needs to be higher than 3.2
+gem 'bootstrap-sass', '~> 3.0.2.0'
 gem 'simple_form'
 gem 'thin'
 gem 'rails-i18n'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

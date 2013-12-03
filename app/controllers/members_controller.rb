@@ -11,6 +11,12 @@ class MembersController < ApplicationController
     end
   end
 
+
+  def search
+    @members = Member.where('last_name ilike ?', params[:params_search])
+    
+  end
+
   # GET /members/1
   # GET /members/1.json
   def show

@@ -1,27 +1,12 @@
-<div class="app-header row-fluid">
-  <div class="app-logo span6">
+<div class="app-header row">
+  <div class="app-logo">
   </div>
-  <div class="head-btns span6">
-    <%= link_to t('campaign.title'), campaigns_path, :class => "btn btn-warning pull-right" %>
-    <%= link_to t('product.title'), products_path, :class => "btn btn-warning pull-right" %>
-    <%= link_to t('member.title'), root_url, :class => "btn btn-warning pull-right" %>
+  <div class="btn-toolbar btn-group-sm" role="toolbar">
     <% if user_signed_in? %>
-    <div class="btn-group">
-      <button class="btn dropdown-toggle" data-toggle="dropdown">
-        <%= current_user.email  %>
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li>
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-        </li>
-    <!-- dropdown menu links -->
-      </ul>
-    </div>  
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
+      <%= link_to (current_user.email), destroy_user_session_path, :method => :delete, :class => "btn btn-success btn-small pull-right" %>        
+      <%= link_to t('campaign.title'), campaigns_path, :class => "btn btn-info btn-sx pull-right" %>
+      <%= link_to t('product.title'), products_path, :class => "btn btn-info btn-sx pull-right" %>
+      <%= link_to t('member.title'), root_url, :class => "btn btn-info btn-sx pull-right" %>
+    <% end %>
   </div>
 </div>

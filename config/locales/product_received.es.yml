@@ -1,0 +1,26 @@
+es:
+  product_received:
+    title: Materiales Recibidos
+    index:
+      title: Materiales Recibidos
+    new:
+      caption: Agregar
+      notice: El registro fue agregado correctamente
+      title: Agregar Material Recibido
+    update:
+      caption: Guardar
+      link: Modificar
+      notice: El registro fue actualizado correctamente
+      title: Modificar Datos
+    show:
+      link: Ver
+      title: Material recibido
+    delete:
+      link: Elimnar
+  activerecord:
+    attributes:
+      product_received:
+        product: Material
+        total: Cantidad
+        description: Descripción
+        received_at: Recibido
