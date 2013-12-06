@@ -1,12 +1,14 @@
-<div class="app-header row">
-  <div class="app-logo">
-  </div>
-  <div class="btn-toolbar btn-group-sm" role="toolbar">
-    <% if user_signed_in? %>
-      <%= link_to (current_user.email), destroy_user_session_path, :method => :delete, :class => "btn btn-success btn-small pull-right" %>        
-      <%= link_to t('campaign.title'), campaigns_path, :class => "btn btn-info btn-sx pull-right" %>
-      <%= link_to t('product.title'), products_path, :class => "btn btn-info btn-sx pull-right" %>
-      <%= link_to t('member.title'), root_url, :class => "btn btn-info btn-sx pull-right" %>
-    <% end %>
-  </div>
+<div class="row">
+    <div class="app-logo">
+    </div>
+    <div class="btn-toolbar btn-group-sm" role="toolbar">
+      <% if user_signed_in? %>
+        <%= link_to t('member.title'), root_url, :class => "btn btn-info btn-sx " %>
+        <%= link_to t('product.title'), products_path, :class => "btn btn-info btn-sx " %>
+        <%= link_to t('campaign.title'), campaigns_path, :class => "btn btn-info btn-sx " %>
+        <%= link_to (current_user.email), destroy_user_session_path, :method => :delete, :class => "btn btn-success btn-sx" %>        
+      <% end %>
+    </div>
 </div>
+
+

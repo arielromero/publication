@@ -8,10 +8,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
- 
     <div  class="container">
-      <%= render 'shared/head' %>
-        <%= yield %>
+        <%= render 'shared/head' %>
+        <br>
+        <div class="row">
+          <%= yield %>
+        </div>
+        
+       
     </div>
 </body>
 </html>

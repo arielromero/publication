@@ -1,6 +1,7 @@
-<h3><%= t('member.index.title')%></h3>
-<div class="line-separator"></div>
-<div class='index'>
+
+<div class="panel panel-info">
+  <div class="panel-heading"><h5><%= t('member.index.title')%></h5></div>
+  <div class="panel-body">
 
   <%= search_form_for @search do |f|%>
   <div class='search_form'>
@@ -8,7 +9,7 @@
       <%= f.label :last_name_cont, "Apellido contiene"%>
       <%= f.text_field :last_name_cont %>
     </div>
-    <div class ='actions'>
+     <div class ='actions'>
       <%# f.submit 'Search', :class => 'btn btn-info'  %>
       <br>
       <button type="submit", class= 'btn btn-success pull-left'>
@@ -41,8 +42,10 @@
   <% end %>
   </table>
 </div>
-<div class="btns">
-   <%= link_to t('member.new.caption'), new_member_path, :class => "btn btn-primary pull-right"  %>
+<div class="panel-footer">
+   <%= link_to t('member.new.caption'), new_member_path, :class => "btn btn-primary"  %>
 </div>
+</div>
+
 
 

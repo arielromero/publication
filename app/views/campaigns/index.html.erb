@@ -1,6 +1,6 @@
-<h3><%= t('campaign.index.title')%></h3>
-<div class="line-separator"></div>
-<div class='index'>
+<div class="panel panel-info">
+  <div class="panel-heading"><h5><%= t('campaign.index.title')%></h5></div>
+  <div class="panel-body">     
 
   <table class="table table-striped">
     <tr>
@@ -25,8 +25,8 @@
     </tr>
   <% end %>
   </table>
-</div>
 
-<div class='btns'>
-   <%= link_to t('campaign.new.caption'), new_campaign_path, :class => "btn btn-primary pull-right"  %>
+  <div class='panel-footer'>
+     <%= link_to t('campaign.new.caption'), new_campaign_path, :class => "btn btn-primary"  %>
+  </div>
 </div>

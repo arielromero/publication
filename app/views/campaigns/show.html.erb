@@ -1,42 +1,44 @@
-<h3><%= t('campaign.show.title')%></h3>
-<div class="line-separator"></div>
-<div class="detail">
-  <p id="notice"><%= notice %></p>
-    
-  <p> 
-    <b><%= label_for('campaign.name')%>:</b>     
-    <%= @campaign.name  %>
-  </p>
-    <b><%= label_for('campaign.begin_at')%>:</b>
-    <%= @campaign.begin_at.to_date %>
-  </p>
-
-  <p>
-    <b><%= label_for('campaign.finish_at')%>:</b>
-    <%= @campaign.finish_at.to_date %>
-  </p>
-
-    <div class="row-fluid">
-      <div class="span3"></div>
-      <div class="span6">
-        <table class="table table-hover">
-          <tr>
-            <th><%= label_for('campaign.products')%></th>
-            <th>Suscripciones</th>
-          </tr>
-          <% @campaign.products.each do |product| %>
-          <tr>
-            <td><%= product.name %></td> 
-            <td><%= @campaign.subscriptions_for_products(product) %></td>
-          </tr>
-          <% end %>
-        </table>
-      </div>
-      <div class="span3"></div>
-    </div>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h5><%= t('campaign.show.title')%></h5>
+    <p id="notice"><%= notice %></p>  
   </div>
-<div class="line-separator"></div>
-<div class="btns">
-  <%= link_to raw('<i class="icon-pencil icon-white"></i> ' + t('action.edit')), edit_campaign_path(@campaign), :class => "btn btn-primary pull-right"  %>
-  <%= link_to t('action.back'), campaigns_path,:class => "btn btn-inverse pull-right"  %>
+  <div class="panel-body">    
+    <p> 
+      <b><%= label_for('campaign.name')%>:</b>     
+      <%= @campaign.name  %>
+    </p>
+      <b><%= label_for('campaign.begin_at')%>:</b>
+      <%= @campaign.begin_at.to_date %>
+    </p>
+
+    <p>
+      <b><%= label_for('campaign.finish_at')%>:</b>
+      <%= @campaign.finish_at.to_date %>
+    </p>
+  </div>
+  <div class="panel-footer">
+    <%= link_to raw('<i class="icon-pencil icon-white"></i> ' + t('action.edit')), edit_campaign_path(@campaign), :class => "btn btn-primary"  %>
+    <%= link_to t('action.back'), campaigns_path,:class => "btn btn-primary"  %>
+  </div>
 </div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h5>Total Suscripciones</h5>
+  </div>
+  <div class="panel-body"> 
+    <table class="table table-hover">
+      <tr>
+        <th><%= label_for('campaign.products')%></th>
+        <th>Suscripciones</th>
+      </tr>
+      <% @campaign.products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td> 
+        <td><%= @campaign.subscriptions_for_products(product) %></td>
+      </tr>
+      <% end %>
+      </table>
+  </div>
+

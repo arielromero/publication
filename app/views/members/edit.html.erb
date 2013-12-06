@@ -1,8 +1,11 @@
-<h3><%= t('member.update.title')%></h3>
-<div class="detail">
+<!-- <div class="col-md-6"> -->
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3><%= t('member.update.title')%></h3>
+    </div>
+    <div class="panel-body">
+      <%= render 'form' %>  
+    <!-- En el form se cierra el div del body del panel -->
+  </div>
+<!-- </div> -->
 
-  <%= render 'form' %>
-
-<div class="btns">
-      <%= link_to t('action.back'), members_path, :class => "btn btn-inverse pull-right"  %>
-</div>

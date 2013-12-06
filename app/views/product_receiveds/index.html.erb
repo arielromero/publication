@@ -1,6 +1,6 @@
-<h3><%= t('product_received.index.title')%>: <%= @campaign.name  %></h3>
-<div class="line-separator"></div>
-<div class='index'>
+<div class="panel panel-info">
+  <div class="panel-heading"><h5><%= t('product_received.index.title')%>: <%= @campaign.name  %></h5></div>
+  <div class="panel-body">   
     <table class="table table-striped">
       <tr>
         <th><%= label_for('product_received.product')%></th>
@@ -24,8 +24,7 @@
       </tr>
     <% end %>
     </table>
-</div>
-<div class="line-separator"></div>
-<div class='btns'>
-   <%= link_to t('product_received.new.caption'), new_campaign_product_received_path, :class => "btn btn-primary pull-right"  %>
+  <div class='panel-footer'>
+     <%= link_to t('product_received.new.caption'), new_campaign_product_received_path, :class => "btn btn-primary"  %>
+  </div>
 </div>
