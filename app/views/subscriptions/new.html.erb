@@ -1,8 +1,9 @@
-<h3><%= t('subscription.new.title')%></h3>
-<div class="line-separator"></div>
-<div class="detail">
-<%= render 'form' %>
 
-<div class="btns">
-  <%= link_to t('action.back'), campaign_subscriptions_path(@campaign), :class => "btn btn-inverse pull-right"   %>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3><%= t('subscription.new.title')%></h3>
+  </div>
+  <div class="panel-body">
+    <%= render 'form' %>
+
 </div>

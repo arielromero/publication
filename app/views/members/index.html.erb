@@ -31,8 +31,8 @@
 
   <% @members.each do |member| %>
     <tr>
-      <td><%= link_to member.last_name, member %></td>
-      <td><%= link_to member.first_name, member %></td>
+      <td><%= member.last_name %></td>
+      <td><%= member.first_name%></td>
       <td><%= member.phone %></td>
       <td><%= member.email %></td>
       <td><%= member.address %></td>

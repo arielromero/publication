@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-  before_filter :find_campaign, :only => [:index, :new, :create, :show, :edit, :update, :destroy, :delivered]
+  before_filter :find_campaign, :only => [:index, :new, :create, :show, :edit, :update, :destroy, :delivered, :search]
   # GET /subscriptions
   # GET /subscriptions.json
   def index
@@ -11,6 +11,13 @@ class SubscriptionsController < ApplicationController
     end
   end
 
+  def search
+    @subscriptions = Subscription.where(:campaign_id => @campaign.id)  
+    @subscriptions = @subscriptions.joins(:member)
+    @subscriptions = @subscriptions.where("( members.first_name || ' ' || members.last_name ILIKE ? ) OR ( members.last_name || ' ' || members.first_name ILIKE ? )",  
+                                                    "%#{params[:search_param]}%","%#{params[:search_param]}%")
+    render :partial => 'list'
+  end
   # GET /subscriptions/1
   # GET /subscriptions/1.json
   def show

@@ -6,9 +6,11 @@
     <%= f.input :numbers %>
     <%= f.input :abbreviation  %>
   </div>
+</div> 
+    <div class="panel-footer">
+      
+        <%= f.button :submit, :class => "btn btn-success"  %>
+        <%= link_to t('action.back'), products_path, :class => "btn btn-danger"  %>
 
-</div>
-<div class="btns">
-    <%= f.button :submit, :class => "btn btn-primary pull-right"  %>
-</div>
+    </div>
 <% end %>

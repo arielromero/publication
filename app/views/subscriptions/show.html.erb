@@ -1,26 +1,10 @@
-<h3><%= t('subscription.show.title')%>: <%= @subscription.campaign.to_label %></h3>
-<div class="line-separator"></div>
-<div class="detail">
-
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span12">
-        <p id="notice"><%= notice %></p>
-      </div>
-    </div>
-
-    <div class="row-fluid">
-      <div class="span6"> <h4><%= @subscription.member.to_label %>(<%= @subscription.created_at.to_date %>)</h4></div>
-    </div>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h5><%= t('subscription.show.title')%>: <%= @subscription.campaign.to_label %>: <%= @subscription.member.to_label %>(<%= @subscription.created_at.to_date %>) </h5>
+    <p id="notice"><%= notice %></p>
   </div>
-</div>
-
-<div class="detail">
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span6" id="product_subs">
-        <div id="product_subcriptions">
-        <table class="table table-hover">
+  <div class="panel-body">  
+    <table class="table table-hover">
           <tr>
             <th><%= label_for('product_subscription.product')%></th>
             <th><%= label_for('product_subscription.total')%></th>
@@ -34,11 +18,15 @@
           </tr>
           <% end %>
         </table>
-        </div>
-      </div>
-      
-     <div class="span6" id="add_product_subs">
-          <%= simple_form_for @product_subscription, :html => { :class => 'form-horizontal' }, :method => :post  do |f| %>
+  </div>
+</div>
+
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h5>Agregar Productos</h5>
+  </div>
+  <div class="panel-body"> 
+    <%= simple_form_for @product_subscription, :html => { :class => 'form-horizontal' }, :method => :post  do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
@@ -46,20 +34,15 @@
             <%= f.association :product,  :collection => @subscription.available_products %>
             <%= f.input :total %>
           </div>
-          <div class="line-separator"></div>
-          <div class="btns">
-            <%= f.button :submit, :class => "btn btn-success btn-rigth left-right", :id => "add_product_subscription"  %>
-          </div>
-          <% end %>
-        </div>
-    </div> 
   </div>
-    <% if @subscription.available_products.count > 0 %> 
-    
-      <% end %>
+  
+  <div class="panel-footer">
+            <%= f.button :submit, :class => "btn btn-success btn-rigth left-right", :id => "add_product_subscription"  %>
+  </div>
+   <% end %>
 </div>
+
 <div class="line-separator"></div>
-<div class="btns"><!-- 
-  <%= link_to raw('<i class="icon-pencil icon-white"></i> ' + t('subscription.update.link')) , edit_campaign_subscription_path(@campaign, @subscription), :class => "btn btn-primary pull-right"  %> -->
-  <%= link_to t('action.back'), campaign_subscriptions_path(@campaign), :class => "btn btn-inverse pull-right"  %>
+<div class="btns">
+  <%= link_to t('action.back'), campaign_subscriptions_path(@campaign), :class => "btn btn-primary pull-left"  %>
 <div>

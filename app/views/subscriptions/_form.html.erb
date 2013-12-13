@@ -4,15 +4,14 @@
 
     <div class="form-inputs">
       <%= f.input :created_at, :as => :string, :input_html => {:class => 'datepicker'}%>
-      <%= f.association :member %>  <%= link_to raw('<i class="icon-search icon-white"></i>'), '#search_member', :class => 'btn btn-small btn-success pull-right', :'data-toggle' => "modal" %>
+      <%= f.association :member %>  
       <%= f.association :campaign, :as => :hidden, :input_html => {:value => @campaign.id} %>
     </div>
-</div>  
-<div class="btns">
-    <%= f.button :submit, :class => "btn btn-primary pull-right"  %>
+</div>
+<div class="panel-footer">
+    <%= f.button :submit, :class => "btn btn-primary "  %>
+    <%= link_to t('action.back'), campaign_subscriptions_path(@campaign), :class => "btn btn-success"   %>
 </div>
   <% end %>
 
-<div id="search_member" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <%= render 'members/search' %>
-</div>
+

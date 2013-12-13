@@ -1,19 +1,19 @@
-<%= simple_form_for(@campaign, :html => {:class => "form-horizontal" }) do |f| %>
+<%= simple_form_for(@campaign, :html => {:class => "form-horizontal", :role => "form" }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :begin_at, :as => :string, :input_html => {:class => 'datepicker'} %>
     <%= f.input :finish_at, :as => :string, :input_html => {:class => 'datepicker'}  %>
 
     <h4>Materiales</h4>
+    
+    <%= f.collection_check_boxes :product_ids, Product.all, :id, :name%>
       
-    <%= f.collection_check_boxes :product_ids, Product.all, :id, :name  %>
-      
-  </div>
-
-</div>
-  <div class="btns">
-    <%= f.button :submit, :class => "btn btn-primary pull-right"  %>
+  
+  </div> 
+  <div class="panel-footer">
+    <%= f.button :submit, :class => "btn btn-success"  %>
+    <%= link_to t('action.show'), @campaign, :class => "btn btn-primary "    %> 
+    <%= link_to t('action.back'), campaigns_path, :class => "btn btn-primary "   %>
   </div>
 <% end %>

@@ -1,27 +1,19 @@
 <div class="panel panel-info">
-  <div class="panel-heading"><h5><%= t('subscription.index.title')%>: <%= @campaign.name  %></h5></div>
-  <div class="panel-body">   
-    <table class="table table-striped">
-      <tr>
-        <th><%= label_for('subscription.member')%></th>
-        <th><%= label_for('subscription.created_at')%></th>
-        <th>Pendientes de entrega</th>
-        <th><%= label_for('subscription.product_delivered')  %> </th>
-        <th></th>
-        <th></th>
-      </tr>
-
-    <% @subscriptions.each do |subscription| %>
-      <tr>
-        <td><%= link_to subscription.member.to_label, campaign_subscription_path(@campaign, subscription)  %></td>
-        <td><%= subscription.created_at %></td>
-        <td> <%= subscription.available_product_delivereds.size  %> </td>
-        <td><%= link_to t('subscription.delivered.link'), campaign_subscription_product_delivereds_path(@campaign, subscription)  %> </td>  
-        <td><i class="icon-pencil"></i><%= link_to t('subscription.update.link'), edit_campaign_subscription_path(@campaign,subscription) %></td>
-        <td><i class="icon-trash"></i><%= link_to t('subscription.delete.link'), campaign_subscription_path(@campaign, subscription), :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    </table>
+  <div class="panel-heading">
+    <h5><%= t('subscription.index.title')%>: <%= @campaign.name  %></h5>
+     <form id="search_subscriptions_form" action="<%= search_campaign_subscriptions_url(@campaign) %>" method="get" >
+      <%= text_field_tag 'search_param' %>
+      <%= hidden_field_tag 'hidden_campaign_id', @campaign.id %>
+      <button type="submit" class="btn btn-primary">
+        <i class="icon-search "></i> <%= t('g.search')%>
+      </button><br>
+      <h4 id="error"></h4>
+    </form> 
+  </div>
+  <div class="panel-body">  
+    <div id="subscriptions_search_results">
+      <%= render 'subscriptions/list' %>
+    </div> 
   </div>
   <div class='panel-footer'>
      <%= link_to t('campaign.new.caption'), new_campaign_subscription_path, :class => "btn btn-primary"  %>

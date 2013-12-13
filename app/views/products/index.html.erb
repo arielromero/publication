@@ -13,7 +13,7 @@
 
     <% @products.each do |product| %>
       <tr>
-        <td><%= link_to product.name, product %></td>
+        <td><%= product.name %></td>
         <td><%= product.numbers %></td>
         <td><i class="icon-pencil"></i><%= link_to t('product.update.link'), edit_product_path(product) %></td>
         <td><i class="icon-trash"></i><%= link_to t('product.delete.link'), product, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>

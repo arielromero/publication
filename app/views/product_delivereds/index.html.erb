@@ -26,19 +26,17 @@
     <div class="panel-body">
       <table class="table table-striped">
         <tr>
-          <th>Subscription</th>
           <th>Product received</th>
+          <th>Cantidad</th>
           <th>Delivered at</th>
-          <th>User</th>
           <th></th>
         </tr>
 
       <% @product_delivereds.each do |product_delivered| %>
         <tr>
-          <td><%= product_delivered.subscription_id %></td>
-          <td><%= product_delivered.product_received_id %></td>
+          <td><%= product_delivered.product.name %></td>
+          <td><%= product_delivered.subscription.total_product_subcription(product_delivered.product)%></td>
           <td><%= product_delivered.delivered_at %></td>
-          <td><%= product_delivered.user_id %></td>
           <td><%= link_to 'Destroy', campaign_subscription_product_delivered_path(@subscription.campaign, @subscription, product_delivered), :method => :delete, :data => { :confirm => 'Are you sure?' }%></td>
         </tr>
       <% end %>

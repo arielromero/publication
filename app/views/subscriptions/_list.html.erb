@@ -1,0 +1,21 @@
+<table class="table table-striped">
+      <tr>
+        <th><%= label_for('subscription.member')%></th>
+        <th><%= label_for('subscription.created_at')%></th>
+        <th>Pendientes de entrega</th>
+        <th><%= label_for('subscription.product_delivered')  %> </th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @subscriptions.each do |subscription| %>
+      <tr>
+        <td><%= link_to subscription.member.to_label, campaign_subscription_path(@campaign, subscription)  %></td>
+        <td><%= subscription.created_at %></td>
+        <td> <%= subscription.available_product_delivereds.size  %> </td>
+        <td><%= link_to t('subscription.delivered.link'), campaign_subscription_product_delivereds_path(@campaign, subscription)  %> </td>  
+        <td><i class="icon-pencil"></i><%= link_to t('subscription.update.link'), edit_campaign_subscription_path(@campaign,subscription) %></td>
+        <td><i class="icon-trash"></i><%= link_to t('subscription.delete.link'), campaign_subscription_path(@campaign, subscription), :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+</table>

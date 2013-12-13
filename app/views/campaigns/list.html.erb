@@ -1,7 +1,16 @@
-<h3><%= t('campaign.list.title')%></h3>
-<div class="line-separator"></div>
-<div class='index'>
-  <table class="table table-striped">
+<div class="panel panel-info">
+  <div class="panel-heading">
+   <h3><%= t('campaign.list.title')%></h3>
+   <div>
+      <p>
+        Download:
+        <%= link_to "CSV", campaign_list_path(@campaign, format: "csv") %> |
+        <%= link_to "Excel", campaign_list_path(@campaign, format: "xls") %>
+      </p>
+    </div>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
     <tr>
       <th><%= t('campaign.list.head')%></th>
       <% @campaign.products.each do |product| %>
@@ -16,12 +25,7 @@
       <% end %>
     </tr>
     <% end %>
-
-    <div>
-      <p>
-        Download:
-        <%= link_to "CSV", campaign_list_path(@campaign, format: "csv") %> |
-        <%= link_to "Excel", campaign_list_path(@campaign, format: "xls") %>
-      </p>
-    </div>
+  </table>
+  </div>
 </div>
+    

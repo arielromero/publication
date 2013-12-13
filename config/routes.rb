@@ -16,6 +16,9 @@ Publication::Application.routes.draw do
       member do
         get 'delivered'
       end
+      collection do
+        get 'search'
+      end
       resources :product_delivereds
     end
     resources :product_receiveds

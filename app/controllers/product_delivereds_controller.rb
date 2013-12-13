@@ -4,7 +4,7 @@ class ProductDeliveredsController < ApplicationController
   # GET /product_delivereds
   # GET /product_delivereds.json
   def index
-    @product_delivereds = ProductDelivered.all
+    @product_delivereds = ProductDelivered.where(:subscription_id => @subscription.id)
 
     respond_to do |format|
       format.html # index.html.erb

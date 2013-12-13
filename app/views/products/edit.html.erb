@@ -1,10 +1,9 @@
-<h3><%= t('product.update.title')%></h3>
-<div class="line-separator"></div>
-<div class="detail">
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3><%= t('product.update.title')%></h3>
+  </div>
+  <div class="panel-body">
 
   <%= render 'form' %>
 
-<div class="btns">
-      <%= link_to t('action.show'), @product, :class => "btn btn-primary pull-left"   %>
-      <%= link_to t('action.back'), products_path, :class => "btn btn-inverse pull-left"  %>
 </div>
