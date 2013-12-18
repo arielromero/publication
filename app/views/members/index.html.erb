@@ -1,23 +1,24 @@
 
 <div class="panel panel-info">
-  <div class="panel-heading"><h5><%= t('member.index.title')%></h5></div>
+  <div class="panel-heading">
+    <h4><%= t('member.index.title')%></h4>
+    <%= search_form_for(@search, :html => {:class => "form-inline", :role => "form" }) do |f|%>
+    <div class='form-group '>
+     
+        <%= f.label :last_name_cont, "Apellido contiene"%>
+        <%= f.text_field :last_name_cont %>
+      
+       
+        <button type="submit", class= 'btn btn-success'>
+          <i class='icon-search icon-white'></i> Buscar
+        </button>
+        <br>
+      
+      <% end %>
+    </div>
+  </div>
   <div class="panel-body">
 
-  <%= search_form_for @search do |f|%>
-  <div class='search_form'>
-    <div class='field'>
-      <%= f.label :last_name_cont, "Apellido contiene"%>
-      <%= f.text_field :last_name_cont %>
-    </div>
-     <div class ='actions'>
-      <%# f.submit 'Search', :class => 'btn btn-info'  %>
-      <br>
-      <button type="submit", class= 'btn btn-success pull-left'>
-        <i class='icon-search icon-white'></i> Buscar
-      </button>
-    </div>
-    <% end %>
-  </div>
   <table class="table table-striped">
     <tr>
       <th><%= sort_link @search, :last_name, label_for('member.last_name')%></th>
