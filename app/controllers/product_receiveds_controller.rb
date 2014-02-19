@@ -45,7 +45,7 @@ class ProductReceivedsController < ApplicationController
 
     respond_to do |format|
       if @product_received.save
-        format.html { redirect_to campaign_product_received_path(@campaign, @received), notice: 'Product received was successfully created.' }
+        format.html { redirect_to campaign_product_receiveds_path(@campaign), notice: 'Product received was successfully created.' }
         format.json { render json: @product_received, status: :created, location: @product_received }
       else
         format.html { render action: "new" }
@@ -58,10 +58,10 @@ class ProductReceivedsController < ApplicationController
   # PUT /product_receiveds/1.json
   def update
     @product_received = ProductReceived.find(params[:id])
-
+    #puts "#{params.inspect} $$$$$$$$$$"
     respond_to do |format|
       if @product_received.update_attributes(params[:product_received])
-        format.html { redirect_to @product_received, notice: 'Product received was successfully updated.' }
+        format.html { redirect_to campaign_product_receiveds_path(@campaign), notice: 'Product received was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

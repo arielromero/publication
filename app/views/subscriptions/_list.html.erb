@@ -11,7 +11,7 @@
     <% @subscriptions.each do |subscription| %>
       <tr>
         <td><%= link_to subscription.member.to_label, campaign_subscription_path(@campaign, subscription)  %></td>
-        <td><%= subscription.created_at %></td>
+        <td><%= subscription.created_at.to_datetime.strftime('%d/%m/%Y')  %></td>
         <td> <%= subscription.available_product_delivereds.size  %> </td>
         <td><%= link_to t('subscription.delivered.link'), campaign_subscription_product_delivereds_path(@campaign, subscription)  %> </td>  
         <td><i class="icon-pencil"></i><%= link_to t('subscription.update.link'), edit_campaign_subscription_path(@campaign,subscription) %></td>

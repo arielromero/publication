@@ -8,9 +8,13 @@
       <%= f.input :description %>
       <%= f.input :received_at, :as => :string, :input_html => {:class => 'datepicker'}%>
       
-    </div>
-</div>
-<div class="btns">
-  <%= f.button :submit, :class => "btn btn-primary pull-right" %>
-</div>
+    <!-- Cierro div del body del panel -->
+    </div> 
+  </div>
+  <div class="panel-footer pull-right ">
+    
+    <%= link_to t('action.back'), campaign_product_receiveds_path(@campaign), :class => "btn btn-success "   %>  
+    <%= f.button :submit, :class => "btn btn-primary " %>
+    
+  </div>
 <% end %>

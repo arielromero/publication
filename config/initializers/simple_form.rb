@@ -45,22 +45,22 @@ SimpleForm.setup do |config|
     b.use :error, :wrap_with => { :tag => :span, :class => :error }
   end
 
-  config.wrappers :bootstrap, :tag => 'div', :class => 'control-group', :error_class => 'error' do |b|
+  config.wrappers :bootstrap, :tag => 'div', :class => 'form-group', :error_class => 'error' do |b|
     b.use :html5
     b.use :placeholder
     b.use :label
-    b.wrapper :tag => 'div', :class => 'controls' do |ba|
+    b.wrapper :tag => 'div', :class => 'col-lg-10' do |ba|
       ba.use :input
       ba.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
       ba.use :hint,  :wrap_with => { :tag => 'p', :class => 'help-block' }
     end
   end
 
-  config.wrappers :prepend, :tag => 'div', :class => "control-group", :error_class => 'error' do |b|
+  config.wrappers :prepend, :tag => 'div', :class => "form-group", :error_class => 'error' do |b|
     b.use :html5
     b.use :placeholder
     b.use :label
-    b.wrapper :tag => 'div', :class => 'controls' do |input|
+    b.wrapper :tag => 'div', :class => 'col-lg-10' do |input|
       input.wrapper :tag => 'div', :class => 'input-prepend' do |prepend|
         prepend.use :input
       end
@@ -69,11 +69,11 @@ SimpleForm.setup do |config|
     end
   end
 
-  config.wrappers :append, :tag => 'div', :class => "control-group", :error_class => 'error' do |b|
+  config.wrappers :append, :tag => 'div', :class => "form-group", :error_class => 'error' do |b|
     b.use :html5
     b.use :placeholder
     b.use :label
-    b.wrapper :tag => 'div', :class => 'controls' do |input|
+    b.wrapper :tag => 'div', :class => 'col-lg-10' do |input|
       input.wrapper :tag => 'div', :class => 'input-append' do |append|
         append.use :input
       end
@@ -81,22 +81,6 @@ SimpleForm.setup do |config|
       input.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
     end
   end
-
-  config.wrappers :checkbox, tag: :div, class: "checkbox", error_class: "has-error" do |b|
-
-    # Form extensions
-    b.use :html5
-
-    # Form components
-    b.wrapper tag: :label do |ba|
-      ba.use :input
-      ba.use :label_text
-    end
-
-    b.use :hint,  wrap_with: { tag: :p, class: "help-block" }
-    b.use :error, wrap_with: { tag: :span, class: "help-block text-danger" }
-  end
-
 
   # Wrappers for forms and inputs using the Twitter Bootstrap toolkit.
   # Check the Bootstrap docs (http://twitter.github.com/bootstrap)
@@ -106,8 +90,8 @@ SimpleForm.setup do |config|
 
   # Define the way to render check boxes / radio buttons with labels.
   # Defaults to :nested for bootstrap config.
-  #   :inline => input + label
-  #   :nested => label > input
+  #:inline => input + label
+  # :nested => label > input
   config.boolean_style = :nested
 
   # Default class for buttons
@@ -142,7 +126,7 @@ SimpleForm.setup do |config|
   # You can wrap each item in a collection of radio/check boxes with a tag,
   # defaulting to :span. Please note that when using :boolean_style = :nested,
   # SimpleForm will force this option to be a label.
-  # config.item_wrapper_tag = :span
+  config.item_wrapper_tag = :span
 
   # You can define a class to use in all item wrappers. Defaulting to none.
   # config.item_wrapper_class = nil
@@ -151,10 +135,10 @@ SimpleForm.setup do |config|
   # config.label_text = lambda { |label, required| "#{required} #{label}" }
 
   # You can define the class to use on all labels. Default is nil.
-  config.label_class = 'control-label'
+  config.label_class = 'col-lg-2 control-label'
 
   # You can define the class to use on all forms. Default is simple_form.
-  # config.form_class = :simple_form
+   config.form_class = "simple_form form-horizontal"
 
   # You can define which elements should obtain additional classes
   # config.generate_additional_classes_for = [:wrapper, :label, :input]

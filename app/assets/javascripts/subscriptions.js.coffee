@@ -13,3 +13,8 @@ $(document).on('submit', '#search_subscriptions_form', (event) ->
     else
       $("#error").text("El criterio de la búsqueda debe ser mayor a 3 caracteres").show().fadeOut(4500);
   )
+
+ # $(document).on 'click', "#btn_member", () -> (
+ #    alert('Hola')
+ #    $(this).addClass('btn-warning').removeClass('btn-info');
+ #  )
