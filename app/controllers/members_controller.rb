@@ -4,6 +4,7 @@ class MembersController < ApplicationController
   def index
     @search = Member.search(params[:q])
     @members = @search.result
+    @members = @members.page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb

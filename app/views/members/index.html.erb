@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="panel-body">
-
+    <%= paginate @members %>
   <table class="table table-striped">
     <tr>
       <th><%= sort_link @search, :last_name, label_for('member.last_name')%></th>
