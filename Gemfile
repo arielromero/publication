@@ -35,6 +35,7 @@ gem 'bootstrap-sass', '~> 3.0.2.0'
 gem 'simple_form'
 gem 'thin'
 gem 'rails-i18n'
+gem 'kaminari-bootstrap', '~> 3.0.1'
 
 
 # To use ActiveModel has_secure_password

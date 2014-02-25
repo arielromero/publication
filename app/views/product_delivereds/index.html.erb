@@ -37,7 +37,7 @@
           <td><%= product_delivered.product.name %></td>
           <td><%= product_delivered.subscription.total_product_subcription(product_delivered.product)%></td>
           <td><%= product_delivered.delivered_at.to_datetime.strftime('%d/%m/%Y')  %></td>
-          <td><%= link_to 'Destroy', campaign_subscription_product_delivered_path(@subscription.campaign, @subscription, product_delivered), :method => :delete, :data => { :confirm => 'Are you sure?' }%></td>
+          <td><%= link_to 'Eliminar', campaign_subscription_product_delivered_path(@subscription.campaign, @subscription, product_delivered), :method => :delete, :data => { :confirm => 'Esta seguro de eliminar la entrega?' }%></td>
         </tr>
       <% end %>
       </table>

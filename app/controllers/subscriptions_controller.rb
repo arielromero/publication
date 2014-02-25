@@ -4,6 +4,8 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions.json
   def index
     @subscriptions = Subscription.where(:campaign_id => @campaign.id)
+    @subscriptions = @subscriptions.joins(:member).order(:last_name)
+    @subscriptions = @subscriptions.page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,8 +16,9 @@ class SubscriptionsController < ApplicationController
   def search
     @subscriptions = Subscription.where(:campaign_id => @campaign.id)  
     @subscriptions = @subscriptions.joins(:member)
-    @subscriptions = @subscriptions.where("( members.first_name || ' ' || members.last_name ILIKE ? ) OR ( members.last_name || ' ' || members.first_name ILIKE ? )",  
-                                                    "%#{params[:search_param]}%","%#{params[:search_param]}%")
+    @subscriptions = @subscriptions.where("( lower(members.first_name) || ' ' || lower(members.last_name) ILIKE ? ) OR ( lower(members.last_name) || ' ' || lower(members.first_name) ILIKE ? )",  
+                                                    "%#{params[:search_param].downcase}%","%#{params[:search_param].downcase}%")
+    @subscriptions = @subscriptions.page(params[:page]).per(10)
     render :partial => 'list'
   end
   # GET /subscriptions/1

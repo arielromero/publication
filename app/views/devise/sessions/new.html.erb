@@ -3,6 +3,7 @@
     <div class="col-md-3 column">
     </div>
     <div class="col-md-6 column">
+            <%= link_to "Registrarse", new_user_registration_path %>
       <div class="well well-lg">
       <!-- <h4>Ingresar</h4> -->
         <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
