@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Publication</title>
+  <title>Publicaciones</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
 
@@ -9,10 +9,14 @@
 </head>
 <body>
     <div  class="container">
-        <%= render 'shared/head' %>
-        <br>
+        <%= render 'shared/navbar' %>
+        
         <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
           <%= yield %>
+          </div>
+          <div class="col-md-1"></div>
         </div>
         
        

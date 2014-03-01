@@ -29,14 +29,22 @@ body {
   margin-right: 5px;
  }
 
-
+#rownav {
+  margin-top: 5px;
+}
 .app-logo{
   background-image: url('logo_publi.png');
-  height: 80px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-repeat: no-repeat;
-
+  height: 120px;
+  margin-top: 5px;
+  width: 100%;
+  /*margin-bottom: 10px;*/
+  /*background-repeat: no-repeat;*/
+  /*background: url('logo_publi.png') no-repeat center center fixed;*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-radius: 5px;
 }
 .detail {
   border-radius: 5px;
@@ -93,6 +101,7 @@ li {
 {
   
   box-shadow: 2px 2px 2px #F5F5F5;
+  margin-bottom: 5px;
 }
 .navbar-inner {
   border-radius: 10px;
@@ -107,7 +116,7 @@ li {
  }
 
 .navbar .nav > li > a {
-  color: #ABC5DF;
+  color: #01A9DB;
  }
 
  .search_form{
@@ -147,7 +156,8 @@ li {
  
  .navbar .brand
 {
-  color: #D3E8ED;
+  color: #424242;
+  background-color:#E0E0E0;
   height: 20px;
   width: 100px;
 }
@@ -161,3 +171,4 @@ li {
   border-bottom:1px solid #E0E0E0;
   border-radius:  10px;
 }
+

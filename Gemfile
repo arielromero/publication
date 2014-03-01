@@ -36,7 +36,7 @@ gem 'simple_form'
 gem 'thin'
 gem 'rails-i18n'
 gem 'kaminari-bootstrap', '~> 3.0.1'
-
+gem 'bootstrap-datepicker-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

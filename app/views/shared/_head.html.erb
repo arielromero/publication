@@ -1,16 +1,26 @@
 <div class="row">
-    <div class="app-logo">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="app-logo"></div>
     </div>
-    <div class="btn-toolbar btn-group-sm" role="toolbar">
-      <% if user_signed_in? %>
-        <h4>Bienvenido: <small><%= current_user.email  %> </small> </h4>   
-        <%= link_to t('member.title'), root_url, :class => "btn btn-info btn-sx ", :id => 'btn_member' %>
-        <%= link_to t('product.title'), products_path, :class => "btn btn-info btn-sx ", :id => 'btn_product' %>
-        <%= link_to t('campaign.title'), campaigns_path, :class => "btn btn-info btn-sx ", :id => 'btn_campaign'  %>
-        <%= link_to ('Salir'), destroy_user_session_path, :method => :delete, :class => "btn btn-success btn-sx" %>        
-        <%= link_to('Cambiar Clave', edit_user_registration_path, :class => "btn btn-success btn-sx" )  %>
-      <% end %>
-    </div>
+    <div class="col-md-1"></div>
 </div>
+<div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="btn-toolbar btn-group-sm" role="toolbar">
+          <% if user_signed_in? %>
+            <h4>Bienvenido: <small><%= current_user.email  %> </small> </h4>   
+            <%= link_to t('member.title'), root_url, :class => "btn btn-info btn-sx ", :id => 'btn_member' %>
+            <%= link_to t('product.title'), products_path, :class => "btn btn-info btn-sx ", :id => 'btn_product' %>
+            <%= link_to t('campaign.title'), campaigns_path, :class => "btn btn-info btn-sx ", :id => 'btn_campaign'  %>
+            <%= link_to ('Salir'), destroy_user_session_path, :method => :delete, :class => "btn btn-success btn-sx" %>        
+            <%= link_to('Cambiar Clave', edit_user_registration_path, :class => "btn btn-success btn-sx" )  %>
+          <% end %>
+        </div>
+      
+      </div>
+      <div class="col-md-1"></div>
+    </div>
 
 
