@@ -5,6 +5,7 @@
       <tr>
         <th><%= label_for('product_received.product')%></th>
         <th><%= label_for('product_received.total') %></th>
+        <th><%= 'Entregados'  %></th>
         <th><%= label_for('product_received.description') %></th>
         <th><%= label_for('product_received.received_at') %></th>
         <th></th>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= product_received.product.name %></td>
         <td><%= product_received.total %></td>
+        <td><%= product_received.product_delivereds.size  %></td>
         <td><%= product_received.description %></td>
         <td><%= product_received.received_at ? product_received.received_at.to_datetime.strftime('%d/%m/%Y') : ' ' %></td>
         <td><%= link_to 'Show', campaign_product_received_path(@campaign, product_received) %></td>
