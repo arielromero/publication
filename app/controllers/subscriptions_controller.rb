@@ -101,8 +101,14 @@ class SubscriptionsController < ApplicationController
     product_delivered.delivered_at = Time.now
     product_delivered.save!
 
-    redirect_to campaign_subscription_product_delivereds_path(@campaign, @subscription), :notice => 'Entregado!!!' 
-
+    if params[:member_id]
+      member = Member.find params[:member_id]
+      #redirect_to @member
+      redirect_to member, :notice => 'Producto entregado correctamente.'
+        
+    else
+      redirect_to campaign_subscription_product_delivereds_path(@campaign, @subscription), :notice => 'Entregado!!!' 
+    end
 
   end
 

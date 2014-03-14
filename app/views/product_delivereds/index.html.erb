@@ -7,12 +7,14 @@
       <table class="table table-striped">
         <tr>
           <th>Producto</th>
+          <th>Cantidad</th>
           <th>Descripción</th>
           <th></th>
         </tr>
         <% @subscription.available_product_delivereds.each do |pd| %>
           <tr>
             <td><%= pd.product.name  %> </td>
+            <td><%= @subscription.total_product_subcription(pd.product)  %></td>
             <td><%= pd.description  %> </td>
             <td><%= link_to 'Entregar', delivered_campaign_subscription_path(@subscription.campaign, @subscription, :product_received_id => pd.id)  %> </td>
           </tr>

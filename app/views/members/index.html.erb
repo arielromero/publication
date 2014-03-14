@@ -26,6 +26,7 @@
       <th><%= label_for('member.phone')%></th>
       <th><%= label_for('member.email')%></th>
       <th><%= label_for('member.address')%></th>
+      <th>Datos y Entregas</th>
       <th></th>
       <th></th>
     </tr>
@@ -37,6 +38,7 @@
       <td><%= member.phone %></td>
       <td><%= member.email %></td>
       <td><%= member.address %></td>
+      <td><i class="icon-eye"></i><%= link_to 'Ver', member_path(member)   %></td> 
       <td><i class="icon-pencil"></i><%= link_to t('member.update.link'), edit_member_path(member) %></td>
       <td><i class="icon-trash"></i><%= link_to t('member.delete.link'), member, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
     </tr>

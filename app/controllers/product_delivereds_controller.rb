@@ -43,11 +43,18 @@ class ProductDeliveredsController < ApplicationController
   # POST /product_delivereds.json
   def create
     @product_delivered = ProductDelivered.new(params[:product_delivered])
-
+    puts "#{params.inspect}"
     respond_to do |format|
       if @product_delivered.save
-        format.html { redirect_to @product_delivered, notice: 'Product delivered was successfully created.' }
-        format.json { render json: @product_delivered, status: :created, location: @product_delivered }
+        if params[:member_id]
+          member = Member.find params[:member_id]
+          #redirect_to @member
+          format.html { redirect_to member, notice: 'Producto entregado correctamente.' }
+          format.json { render json: @product_delivered, status: :created, location: @product_delivered }
+        else
+          format.html { redirect_to @product_delivered, notice: 'Producto entrega correctamente.' }
+          format.json { render json: @product_delivered, status: :created, location: @product_delivered }
+        end    
       else
         format.html { render action: "new" }
         format.json { render json: @product_delivered.errors, status: :unprocessable_entity }
