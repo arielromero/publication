@@ -7,4 +7,12 @@ class Member < ActiveRecord::Base
   def to_label
   	last_name + ', ' + first_name
   end
+
+  def total_available_products
+    n = 0
+    subscriptions.each do |s|  
+      n = s.available_product_delivereds.size
+    end
+    n
+  end
 end

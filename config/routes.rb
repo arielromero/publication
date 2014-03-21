@@ -29,7 +29,11 @@ Publication::Application.routes.draw do
 
   resources :products
 
-  resources :members
+  resources :members do
+    member do
+        get 'delivered_all'
+      end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

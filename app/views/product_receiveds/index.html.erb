@@ -5,10 +5,11 @@
       <tr>
         <th><%= label_for('product_received.product')%></th>
         <th><%= label_for('product_received.total') %></th>
+        <th>Total suscriptos</th>
         <th><%= 'Entregados'  %></th>
         <th><%= label_for('product_received.description') %></th>
         <th><%= label_for('product_received.received_at') %></th>
-        <th></th>
+        
         <th></th>
         <th></th>
       </tr>
@@ -17,12 +18,13 @@
       <tr>
         <td><%= product_received.product.name %></td>
         <td><%= product_received.total %></td>
+        <td><%= @campaign.subscriptions_for_products(product_received.product) %></td>
         <td><%= product_received.product_delivereds.size  %></td>
         <td><%= product_received.description %></td>
         <td><%= product_received.received_at ? product_received.received_at.to_datetime.strftime('%d/%m/%Y') : ' ' %></td>
-        <td><%= link_to 'Show', campaign_product_received_path(@campaign, product_received) %></td>
-        <td><%= link_to 'Edit', edit_campaign_product_received_path(@campaign, product_received) %></td>
-        <td><i class="icon-trash"></i><%= link_to t('product_received.delete.link'), campaign_product_received_path(@campaign, product_received), :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+        <td><i class="glyphicon glyphicon-edit"></i>
+            <%= link_to 'Modificar', edit_campaign_product_received_path(@campaign, product_received) %></td>
+        <td><i class="glyphicon glyphicon-trash"></i><%= link_to t('product_received.delete.link'), campaign_product_received_path(@campaign, product_received), :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
       </tr>
     <% end %>
     </table>

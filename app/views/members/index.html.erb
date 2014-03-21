@@ -21,26 +21,38 @@
     <%= paginate @members %>
   <table class="table table-striped">
     <tr>
-      <th><%= sort_link @search, :last_name, label_for('member.last_name')%></th>
-      <th><%= sort_link @search, :first_name, label_for('member.first_name')%></th>
-      <th><%= label_for('member.phone')%></th>
-      <th><%= label_for('member.email')%></th>
-      <th><%= label_for('member.address')%></th>
-      <th>Datos y Entregas</th>
+      <th><%= label_for('member.full_name')%></th>
+      <!-- <th><%= label_for('member.first_name')%></th> -->
+      <!-- <th><%= label_for('member.phone')%></th> -->
+      <!-- <th><%= label_for('member.email')%></th> -->
+      <th>Productos para entregar</th>
+      <th></th>
       <th></th>
       <th></th>
     </tr>
 
   <% @members.each do |member| %>
     <tr>
-      <td><%= member.last_name %></td>
-      <td><%= member.first_name%></td>
-      <td><%= member.phone %></td>
-      <td><%= member.email %></td>
-      <td><%= member.address %></td>
-      <td><i class="icon-eye"></i><%= link_to 'Ver', member_path(member)   %></td> 
-      <td><i class="icon-pencil"></i><%= link_to t('member.update.link'), edit_member_path(member) %></td>
-      <td><i class="icon-trash"></i><%= link_to t('member.delete.link'), member, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+      <td class="member_item"><%= member.to_label %></td>
+      <div id="member_additional_info_<%= member.id %>" class="data hide">
+        <h4>Datos Personales</h4>
+        <p>
+          <strong>Telefono: </strong><br>
+          <small><%= member.phone %></small>
+        </p>
+        <p>
+          <strong>Email: </strong><br>
+          <small><%= member.email %></small>
+        </p>
+        
+      </div>
+      <!-- <td><%= member.first_name%></td> -->
+      <!-- <td><%= member.phone %></td> -->
+      <!-- <td><%= member.email %></td> -->
+      <td><%= member.total_available_products %></td>
+      <td><i class="glyphicon glyphicon-eye-open"></i><%= link_to ' Entregas', member_path(member)   %></td> 
+      <td><i class="glyphicon glyphicon-edit"></i><%= link_to t('member.update.link'), edit_member_path(member) %></td>
+      <td><i class="glyphicon glyphicon-trash"></i><%= link_to t('member.delete.link'), member, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
     </tr>
   <% end %>
   </table>

@@ -77,6 +77,22 @@ class MembersController < ApplicationController
     end
   end
 
+
+  def delivered_all
+    member = Member.find(params[:id])
+    member.subscriptions.each do |s|  
+      s.available_product_delivereds.each do |pd| 
+        product_delivered = ProductDelivered.new
+        product_delivered.subscription_id = s.id
+        product_delivered.product_received_id = pd.id
+        product_delivered.user_id = current_user.id
+        product_delivered.delivered_at = Time.now
+        product_delivered.save!
+      end
+    end
+    redirect_to members_url , :notice => 'Productos entregados a ' + member.to_label 
+  end
+
   # DELETE /members/1
   # DELETE /members/1.json
   def destroy
