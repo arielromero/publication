@@ -11,7 +11,7 @@ class Member < ActiveRecord::Base
   def total_available_products
     n = 0
     subscriptions.each do |s|  
-      n = s.available_product_delivereds.size
+      n = n + s.available_product_delivereds.size
     end
     n
   end
