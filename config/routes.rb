@@ -22,6 +22,11 @@ Publication::Application.routes.draw do
       resources :product_delivereds
     end
     resources :product_receiveds
+    resources :product_received_groups do 
+      member do
+        get 'list'
+      end
+    end
 
     get 'list'
     

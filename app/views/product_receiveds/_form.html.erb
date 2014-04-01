@@ -3,6 +3,7 @@
 
     <div class="form-inputs">
       <%= f.association :product,  :collection => @campaign.products %>
+      <%= f.association :product_received_group,  :collection => @campaign.product_received_groups %>
       <%= f.input :total %>
       <%= f.association :campaign, :as => :hidden, :input_html => {:value => @campaign.id} %>
       <%= f.input :description %>

@@ -21,6 +21,8 @@ es:
       link: Suscripciones
     product_receiveds:
       link: Productos Recibidos
+    product_received_groups:
+      link: Grupos
     list:
       head: Nombre / Producto
       title: Listado Suscripciones

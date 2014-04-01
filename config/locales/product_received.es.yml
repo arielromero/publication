@@ -21,6 +21,7 @@ es:
     attributes:
       product_received:
         product: Material
+        product_received_group: Grupo
         total: Cantidad
         description: Descripción
         received_at: Recibido

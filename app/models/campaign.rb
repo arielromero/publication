@@ -3,6 +3,7 @@ class Campaign < ActiveRecord::Base
   has_and_belongs_to_many  :products
   has_many :subscriptions
   has_many :product_receiveds
+  has_many :product_received_groups
 
   def to_label
   	name

@@ -8,6 +8,7 @@
         <th>Total suscriptos</th>
         <th><%= 'Entregados'  %></th>
         <th><%= label_for('product_received.description') %></th>
+        <th>Grupo</th>
         <th><%= label_for('product_received.received_at') %></th>
         
         <th></th>
@@ -19,8 +20,9 @@
         <td><%= product_received.product.name %></td>
         <td><%= product_received.total %></td>
         <td><%= @campaign.subscriptions_for_products(product_received.product) %></td>
-        <td><%= product_received.product_delivereds.size  %></td>
+        <td><%= product_received.total_delivered %></td>
         <td><%= product_received.description %></td>
+        <td><%= product_received.product_received_group.description  %></td>
         <td><%= product_received.received_at ? product_received.received_at.to_datetime.strftime('%d/%m/%Y') : ' ' %></td>
         <td><i class="glyphicon glyphicon-edit"></i>
             <%= link_to 'Modificar', edit_campaign_product_received_path(@campaign, product_received) %></td>
