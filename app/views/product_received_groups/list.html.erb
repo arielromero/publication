@@ -1,0 +1,33 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+   <h3><%= t('campaign.list.title')%> y Entregas: <%= @campaign.name%> - <%= @product_received_group.description  %> </h3>
+   <div>
+      <p>
+        Download:
+        <%= link_to "CSV", list_campaign_product_received_group_path(@campaign, @product_received_group, format: "csv") %> |
+        <%= link_to "Excel", list_campaign_product_received_group_path(@campaign, @product_received_group, format: "xls") %>
+      </p>
+    </div>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+    <tr>
+      <th><%= t('campaign.list.head')%></th>
+      <% @campaign.products.each do |product| %>
+        <th> <%= product.abbreviation  %>  </th>
+      <% end %>
+      <th>Entrega</th>
+    </tr>
+    <% @campaign.subscriptions.each do |subscription| %>
+    <tr>
+      <td><%= subscription.member.to_label  %> </td>
+      <% @campaign.products.each do |product| %>
+        <td> <%= subscription.total_product_subcription(product)  %> </td>
+      <% end %>
+      <td> <%= @product_received_group.delivered?(subscription) ? 'Entregado' : ''  %></td>
+    </tr>
+    <% end %>
+  </table>
+  </div>
+</div>
+    

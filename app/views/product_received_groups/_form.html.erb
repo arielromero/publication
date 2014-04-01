@@ -1,0 +1,18 @@
+<%= simple_form_for [@campaign, @product_received_group], :html => {:class => "form-horizontal" } do |f|  %>
+  <%= f.error_notification %>
+
+    <div class="form-inputs">
+     
+      <%= f.association :campaign, :as => :hidden, :input_html => {:value => @campaign.id} %>
+      <%= f.input :description %>
+      
+    <!-- Cierro div del body del panel -->
+    </div> 
+  </div>
+  <div class="panel-footer pull-right ">
+    
+    <%= link_to t('action.back'), campaign_product_received_groups_path(@campaign), :class => "btn btn-success "   %>  
+    <%= f.button :submit, :class => "btn btn-primary " %>
+    
+  </div>
+<% end %>

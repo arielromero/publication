@@ -1,0 +1,27 @@
+<div class="panel panel-info">
+  <div class="panel-heading"><h5><%= t('product_received.index.title')%>: <%= @campaign.name  %></h5></div>
+  <div class="panel-body">   
+    <table class="table table-striped">
+      <tr>
+        <th>Descripcion</th>
+        
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @product_received_groups.each do |product_received_group| %>
+      <tr>
+        <td><%= product_received_group.description %></td>
+        <td><i class="glyphicon glyphicon-edit"></i>
+            <%= link_to 'Modificar', edit_campaign_product_received_group_path(@campaign, product_received_group) %></td>
+        <td><i class="glyphicon glyphicon-list"></i>
+            <%= link_to 'Lista Entregas', list_campaign_product_received_group_path(@campaign, product_received_group) %></td>
+        <td><i class="glyphicon glyphicon-trash"></i><%= link_to t('product_received.delete.link'), campaign_product_received_group_path(@campaign, product_received_group), :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
+  <div class='panel-footer'>
+     <%= link_to t('product_received.new.caption'), new_campaign_product_received_group_path, :class => "btn btn-primary"  %>
+  </div>
+</div>

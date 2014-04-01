@@ -1,0 +1,17 @@
+<div class="detail">
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <b>Description:</b>
+  <%= @product_received_group.description %>
+</p>
+
+
+
+</div>
+ 
+<div class="btns">
+  <%= link_to 'Edit', edit_campaign_product_received_group_path(@campaign, @product_received_group), :class => "btn btn-inverse pull-right"  %>
+  <%= link_to t('action.back'), campaign_product_received_groups_path(@campaign), :class => "btn btn-inverse pull-right"  %>
+</div>
