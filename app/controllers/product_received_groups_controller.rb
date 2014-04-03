@@ -15,7 +15,7 @@ class ProductReceivedGroupsController < ApplicationController
   # GET /products/1.json
   def show
     @product_received_group = ProductReceivedGroup.find(params[:id])
-
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @product_received_group }
@@ -26,7 +26,7 @@ class ProductReceivedGroupsController < ApplicationController
   # GET /products/new.json
   def new
     @product_received_group = ProductReceivedGroup.new
-
+    #@product_received_group.campaign_id = @campaign.id
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @product_received_group }
@@ -41,8 +41,9 @@ class ProductReceivedGroupsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product_received_group = ProductReceivedGroup.new(params[:product])
-
+    puts "#{params.inspect}"
+    @product_received_group = ProductReceivedGroup.new(params[:product_received_group])
+    #@product_received_group.campaign_id = @campaign.id
     respond_to do |format|
       if @product_received_group.save
         format.html { redirect_to campaign_product_received_groups_path(@campaign), :notice => 'Grupo creado correctamente' }
