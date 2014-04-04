@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<% if @subscription.campaign.finish_at < Time.now  %>
+<% if @subscription.campaign.finish_at > Time.now  %>
 <div class="panel panel-success">
   <div class="panel-heading">
     <h5>Agregar Productos</h5>
