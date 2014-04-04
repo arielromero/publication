@@ -14,7 +14,7 @@
           <tr>
             <td><%= product_subscription.product.name %></td>
             <td><%= product_subscription.total %></td> 
-            <td><%= link_to t('product_subscription.delete.link'), product_subscription, :method => :delete, :data => { :confirm => 'Esta seguro de eliminar la suscripcion al producto?' } if @subscription.campaign.finish_at < Time.now%></td>
+            <td><%= link_to t('product_subscription.delete.link'), product_subscription, :method => :delete, :data => { :confirm => 'Esta seguro de eliminar la suscripcion al producto?' } if @subscription.campaign.finish_at > Time.now%></td>
           </tr>
           <% end %>
         </table>
