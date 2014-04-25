@@ -18,7 +18,7 @@
       <% end %>
       <th>Entrega</th>
     </tr>
-    <% @campaign.subscriptions.each do |subscription| %>
+    <% @campaign.subscriptions.joins(:member).order(:last_name).each do |subscription| %>
     <tr>
       <td><%= subscription.member.to_label  %> </td>
       <% @campaign.products.each do |product| %>
