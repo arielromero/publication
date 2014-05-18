@@ -41,7 +41,7 @@ class ProductReceivedGroup < ActiveRecord::Base
       line.push('Entregado')
       csv << line
 
-      campaign.subscriptions.each do |s|
+      campaign.subscriptions.joins(:member).order(:last_name).each.each do |s|
         line.clear
         line.push(s.member.to_label)
         campaign.products.each do |p|
