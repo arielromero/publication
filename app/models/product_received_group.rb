@@ -14,7 +14,7 @@ class ProductReceivedGroup < ActiveRecord::Base
     product_receiveds.each do |pr|
       pd = pr.product_delivereds.where(:subscription_id => subscription.id).last
       if pd
-        puts "#{pd.subscription.member.to_label}"
+        #puts "#{pd.subscription.member.to_label}"
         r = true
         break
       else

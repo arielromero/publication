@@ -26,7 +26,7 @@ class ProductReceivedGroupsController < ApplicationController
   # GET /products/new.json
   def new
     @product_received_group = ProductReceivedGroup.new
-    #@product_received_group.campaign_id = @campaign.id
+    # @product_received_group.campaign_id = @campaign.id
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @product_received_group }
@@ -41,7 +41,6 @@ class ProductReceivedGroupsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    puts "#{params.inspect}"
     @product_received_group = ProductReceivedGroup.new(params[:product_received_group])
     #@product_received_group.campaign_id = @campaign.id
     respond_to do |format|
@@ -92,7 +91,9 @@ class ProductReceivedGroupsController < ApplicationController
       format.html # show.html.erb
       format.json { render :json => @product_received_group }
       format.csv { send_data @product_received_group.to_csv }
-      format.xls { send_data @product_received_group.to_csv(col_sep: "\t") }
+      format.xls { send_data @product_received_group.to_csv(col_sep: "\t"),
+                  :type => 'text/csv; charset=iso-8859-1; header=present'
+                   }
     end 
   end
 

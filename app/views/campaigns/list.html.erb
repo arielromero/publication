@@ -10,12 +10,16 @@
     </div>
   </div>
   <div class="panel-body">
+    <div class="table-scroll">
     <table class="table table-striped">
     <tr>
       <th><%= t('campaign.list.head')%></th>
       <% @campaign.products.each do |product| %>
         <th> <%= product.abbreviation  %>  </th>
       <% end %>
+      <% @campaign.product_received_groups.each do |g|  %>
+      <th><%= g.description %> </th>
+      <% end  %>
     </tr>
     <% @campaign.subscriptions.joins(:member).order(:last_name).each do |subscription| %>
     <tr>
@@ -23,9 +27,13 @@
       <% @campaign.products.each do |product| %>
         <td> <%= subscription.total_product_subcription(product)  %> </td>
       <% end %>
+      <% @campaign.product_received_groups.each do |g|  %>
+      <td><%= g.delivered?(subscription) ? 'Entregado' : ''  %> </td>
+      <% end  %> 
     </tr>
     <% end %>
   </table>
   </div>
+</div>
 </div>
     

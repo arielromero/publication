@@ -16,7 +16,7 @@
 
   <% @campaigns.each do |campaign| %>
     <tr>
-      <td><%= link_to campaign.name, campaign_path(campaign) %></td>
+      <td><%= link_to campaign.name, campaign_path(campaign) %> <%#= link_to '', campaign_list_path(campaign)%></td>
       <td><%= campaign.begin_at.to_date %></td>
       <td><%= campaign.finish_at.to_date %></td>
       <td><i class="glyphicon glyphicon-edit"></i><%= link_to t('campaign.update.link'), edit_campaign_path(campaign) %></td>

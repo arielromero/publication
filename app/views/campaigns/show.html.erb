@@ -20,6 +20,7 @@
   <div class="panel-footer">
     <%= link_to raw('<i class="icon-pencil icon-white"></i> ' + t('action.edit')), edit_campaign_path(@campaign), :class => "btn btn-primary"  %>
     <%= link_to t('action.back'), campaigns_path,:class => "btn btn-primary"  %>
+    <%= link_to 'Listado de Suscripciones', campaign_list_path(@campaign), :class => "btn btn-info" %>
   </div>
 </div>
 
