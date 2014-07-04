@@ -12,7 +12,7 @@
 
     <% @product_received_groups.each do |product_received_group| %>
       <tr>
-        <td><%= product_received_group.description %></td>
+        <td> <%= link_to product_received_group.description, campaign_product_received_group_path(@campaign, product_received_group) %> </td>
         <td><i class="glyphicon glyphicon-edit"></i>
             <%= link_to 'Modificar', edit_campaign_product_received_group_path(@campaign, product_received_group) %></td>
         <td><i class="glyphicon glyphicon-list"></i>

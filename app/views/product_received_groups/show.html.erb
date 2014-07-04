@@ -1,17 +1,38 @@
-<div class="detail">
-<p id="notice"><%= notice %></p>
 
+<div class="panel panel-info">
+  <div class="panel-heading"><h5><%= t('product_received.index.title')%>: <%= @campaign.name  %>: <%= @product_received_group.description %></h5></div>
+  <div class="panel-body">   
+    <table class="table table-striped">
+      <tr>
+        <th><%= label_for('product_received.product')%></th>
+        <th><%= label_for('product_received.total') %></th>
+        <th>Total suscriptos</th>
+        <th><%= 'Entregados'  %></th>
+        <th><%= label_for('product_received.description') %></th>
+        <th><%= label_for('product_received.received_at') %></th>
+        
+        <th></th>
+        <th></th>
+      </tr>
 
-<p>
-  <b>Description:</b>
-  <%= @product_received_group.description %>
-</p>
-
-
-
-</div>
- 
-<div class="btns">
-  <%= link_to 'Edit', edit_campaign_product_received_group_path(@campaign, @product_received_group), :class => "btn btn-inverse pull-right"  %>
-  <%= link_to t('action.back'), campaign_product_received_groups_path(@campaign), :class => "btn btn-inverse pull-right"  %>
+    <% @campaign.product_receiveds.each do |product_received| %>
+      <% if product_received.product_received_group.id == @product_received_group.id  %>
+        <tr>
+          <td><%= product_received.product.name %></td>
+          <td><%= product_received.total %></td>
+          <td><%= @campaign.subscriptions_for_products(product_received.product) %></td>
+          <td><%= product_received.total_delivered %></td>
+          <td><%= product_received.description %></td>
+          <td><%= product_received.received_at ? product_received.received_at.to_datetime.strftime('%d/%m/%Y') : ' ' %></td>
+          <td><i class="glyphicon glyphicon-edit"></i>
+              <%= link_to 'Modificar', edit_campaign_product_received_path(@campaign, product_received) %></td>
+          <td><i class="glyphicon glyphicon-trash"></i><%= link_to t('product_received.delete.link'), campaign_product_received_path(@campaign, product_received), :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+        </tr>
+        <% end  %>
+    <% end %>
+    </table>
+  <div class='panel-footer'>
+    <%= link_to 'Modificar', edit_campaign_product_received_group_path(@campaign, @product_received_group), :class => "btn btn-primary"  %>
+  <%= link_to t('action.back'), campaign_product_received_groups_path(@campaign), :class => "btn btn-primary "  %>  
+  </div>
 </div>
