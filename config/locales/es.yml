@@ -10,3 +10,10 @@ es:
     show_all: Ver Todos
   user:
     login: Ingresar
+  views:
+    pagination:
+      previous: "&#x25C0"
+      next: "&#9654"
+      last: "&#9660"
+      first: "&#9650"
+      truncate: "..."

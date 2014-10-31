@@ -9,6 +9,8 @@ Publication::Application.routes.draw do
 
   resources :product_subscriptions
 
+  resources :direct_sales
+
   #resources :subscriptions
 
   resources :campaigns do 

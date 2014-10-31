@@ -1,6 +1,8 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700);
 
+
+
 body {
   /*background-color: #F1F0F2; */
   background-image: url(fondo.png);
@@ -103,12 +105,20 @@ li {
   box-shadow: 2px 2px 2px #F5F5F5;
   margin-bottom: 5px;
 }
+
+ul.nav a:hover { color: #0e77be !important; }
+
 .navbar-inner {
   border-radius: 10px;
   margin-top:15px;
-  box-shadow: 2px 2px 2px #F5F5F5;
+  box-shadow: 2px 2px 2px #35613b;
 
  }
+
+ .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  color: white;
+  background-color: #3f3e84;
+}
 
  .btns > a {
   margin-left: 5px;
@@ -116,7 +126,7 @@ li {
  }
 
 .navbar .nav > li > a {
-  color: #01A9DB;
+  color: #f6f2f2;
  }
 
  .search_form{
@@ -162,8 +172,8 @@ li {
  
  .navbar .brand
 {
-  color: #424242;
-  background-color:#E0E0E0;
+  color: #f6546a;
+  background-color:#35613b;
   height: 20px;
   width: 100px;
 }

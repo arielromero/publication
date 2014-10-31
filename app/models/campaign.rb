@@ -28,6 +28,7 @@ class Campaign < ActiveRecord::Base
 
   def to_csv(options = {})
     line = Array.new()
+    line.push(name)
     line.push('Nombre/Producto')
     products.each do |p|
       line.push(p.name)
