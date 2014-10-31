@@ -1,0 +1,16 @@
+  <%= simple_form_for [@directsale], :html => {:class => "form-horizontal" } do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :created_at, :as => :string, :input_html => {:class => 'datepicker'}%>
+      <%= f.association :member %>  
+      <%= f.association :product, :collection => Product.where(:by_direct_sale => :yes) %>
+      <%= f.input :total %>
+      <%= f.input :price %>
+    </div>
+</div>
+<div class="panel-footer">
+    <%= f.button :submit, :class => "btn btn-primary "  %>
+    <%= link_to t('action.back'), direct_sales_path(), :class => "btn btn-success"   %>
+</div>
+  <% end %>

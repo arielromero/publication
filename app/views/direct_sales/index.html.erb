@@ -1,0 +1,36 @@
+<div class="panel panel-info">
+  <div class="panel-heading"><h5><%= t('direct_sale.index.title')%></h5></div>
+  <div class="panel-body">
+     
+
+    <table class="table table-striped">
+      <tr>
+        <th><%= label_for('direct_sale.member')%></th>
+        <th><%= label_for('direct_sale.product')%></th>
+        <th><%= label_for('direct_sale.price')%></th>
+        <th><%= label_for('direct_sale.total')%></th>
+        <th>Precio total</th>
+        <th><%= label_for('direct_sale.created_at')%></th>
+
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @directsales.each do |direct_sale| %>
+      <tr>
+        <td><%= direct_sale.product.name %></td>
+        <td><%= direct_sale.member.to_label %></td>
+        <td><%= direct_sale.price %></td>
+        <td><%= direct_sale.total %></td>
+        <td><%= direct_sale.price *  direct_sale.total %></td>
+        <td><%= direct_sale.created_at %></td>
+        <td><i class="glyphicon glyphicon-edit"></i><%= link_to t('direct_sale.update.link'), edit_direct_sale_path(direct_sale) %></td>
+        <td><i class="glyphicon glyphicon-trash"></i><%= link_to t('direct_sale.delete.link'), direct_sale, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+  <div class='panel-footer'>
+     <%= link_to t('direct_sale.new.caption'), new_direct_sale_path, :class => "btn btn-primary"  %>
+  </div>
+</div>

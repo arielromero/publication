@@ -1,0 +1,28 @@
+es:
+  direct_sale:
+    title: Ventas Directas
+    index:
+      title: Lista de ventas
+    new:
+      caption: Nuevo
+      notice: La venta fue creada correctamente
+      title: Nueva venta
+    update:
+      caption: Guardar
+      link: Modificar
+      notice: La venta fue actualizada correctamente
+      title: Modificar Datos
+    show:
+      link: Ver
+      title: Ventas
+    delete:
+      link: Elimnar
+  activerecord:
+    attributes:
+      direct_sale:
+        product: Producto
+        member: Miembro
+        total: Cantidad
+        price: Precio
+        created_at: Fecha
+        
