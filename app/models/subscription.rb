@@ -31,7 +31,15 @@ class Subscription < ActiveRecord::Base
       end
     end
     delivereds
+  end
 
+  def backordered_products(product_id, product_received_id)
+    ps = product_subscriptions.where(:product_id => product_id)
+    if ps.count > 0 && product_delivereds.where(:product_received_id => product_received_id).count == 0
+      1
+    else
+      0
+    end
   end
 
   def total_product_subcription(product)
