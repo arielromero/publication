@@ -18,6 +18,11 @@ class MembersController < ApplicationController
     
   end
 
+  def backordered
+    @members = Member.all.select { | x | x.total_available_products > 0 }
+    
+  end
+
   # GET /members/1
   # GET /members/1.json
   def show

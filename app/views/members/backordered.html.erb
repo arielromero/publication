@@ -1,25 +1,5 @@
-
 <div class="panel panel-info">
-  <div class="panel-heading">
-    <h4><%= t('member.index.title')%></h4>
-    <%= search_form_for(@search, :html => {:class => "form-inline", :role => "form" }) do |f|%>
-    <div class='form-group '>
-     
-        <%= f.label :last_name_cont, "Apellido contiene"%>
-        <%= f.text_field :last_name_cont %>
-      
-       
-        <button type="submit", class= 'btn btn-success'>
-          <i class='icon-search icon-white'></i> Buscar
-        </button>
-        <br>
-        <%= link_to "Ver pendientes de entrega", backordered_members_path %>
-      
-      <% end %>
-    </div>
-  </div>
   <div class="panel-body">
-    <%= paginate @members %>
   <table class="table table-striped">
     <tr>
       <th><%= label_for('member.full_name')%></th>
@@ -62,6 +42,3 @@
    <%= link_to t('member.new.caption'), new_member_path, :class => "btn btn-primary"  %>
 </div>
 </div>
-
-
-

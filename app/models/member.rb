@@ -15,4 +15,12 @@ class Member < ActiveRecord::Base
     end
     n
   end
+
+  def backordered_products(product_received)
+    n = 0
+    subscriptions.where(:campaign_id => product_received.campaign_id).each do | s |
+      n = n + s.backordered_products(product_received.product_id, product_received.id) 
+    end
+    n
+  end
 end
