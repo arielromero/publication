@@ -1,25 +1,5 @@
-
 <div class="panel panel-info">
-  <div class="panel-heading">
-    <h4><%= t('member.index.title')%></h4>
-    <%= search_form_for(@search, :html => {:class => "form-inline", :role => "form" }) do |f|%>
-    <div class='form-group '>
-     
-        <%= f.label :last_name_cont, "Apellido contiene"%>
-        <%= f.text_field :last_name_cont %>
-      
-       
-        <button type="submit", class= 'btn btn-info'>
-          <i class='icon-search icon-white'></i> Buscar
-        </button>
-        <br>
-        <%= link_to "Ver pendientes de entrega", backordered_members_path %>
-      
-      <% end %>
-    </div>
-  </div>
   <div class="panel-body">
-    <%= paginate @members %>
   <table class="table table-striped">
     <tr>
       <th><%= label_for('member.full_name')%></th>
@@ -50,7 +30,7 @@
       <!-- <td><%= member.first_name%></td> -->
       <!-- <td><%= member.phone %></td> -->
       <!-- <td><%= member.email %></td> -->
-      <td><%= member.total_available_products %></td>
+      <td><%= member.backordered_products(@product_received) %></td>
       <td><i class="glyphicon glyphicon-eye-open"></i><%= link_to ' Entregas', member_path(member)   %></td> 
       <td><i class="glyphicon glyphicon-edit"></i><%= link_to t('member.update.link'), edit_member_path(member) %></td>
       <td><i class="glyphicon glyphicon-trash"></i><%= link_to t('member.delete.link'), member, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
@@ -62,6 +42,3 @@
    <%= link_to t('member.new.caption'), new_member_path, :class => "btn btn-primary"  %>
 </div>
 </div>
-
-
-

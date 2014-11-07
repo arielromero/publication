@@ -23,7 +23,11 @@ Publication::Application.routes.draw do
       end
       resources :product_delivereds
     end
-    resources :product_receiveds
+    resources :product_receiveds do
+      member do
+        get 'backordered'
+      end
+    end
     resources :product_received_groups do 
       member do
         get 'list'
@@ -38,8 +42,11 @@ Publication::Application.routes.draw do
 
   resources :members do
     member do
-        get 'delivered_all'
-      end
+      get 'delivered_all'
+    end
+    collection do
+      get 'backordered'
+    end
   end
 
   # The priority is based upon order of creation:

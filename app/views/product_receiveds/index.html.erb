@@ -13,6 +13,7 @@
         
         <th></th>
         <th></th>
+        <th></th>
       </tr>
 
     <% @product_receiveds.each do |product_received| %>
@@ -27,6 +28,11 @@
         <td><i class="glyphicon glyphicon-edit"></i>
             <%= link_to 'Modificar', edit_campaign_product_received_path(@campaign, product_received) %></td>
         <td><i class="glyphicon glyphicon-trash"></i><%= link_to t('product_received.delete.link'), campaign_product_received_path(@campaign, product_received), :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+        <td>
+          <i class="glyphicon glyphicon-share"></i>
+          <%= link_to t("backordered.title"), backordered_campaign_product_received_path(@campaign, product_received) %>
+         
+        </td>
       </tr>
     <% end %>
     </table>

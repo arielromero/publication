@@ -11,6 +11,14 @@ class ProductReceivedsController < ApplicationController
     end
   end
 
+  def backordered
+    @product_received = ProductReceived.find(params[:id])
+    # Buscar suscripciones con ese producto,
+    # que todavia no se haya entregado este product received
+    # Con eso buscar a los miembros de las suscripciones
+    @members = Member.all.select { | x | x.backordered_products(@product_received) > 0 }
+  end
+
   # GET /product_receiveds/1
   # GET /product_receiveds/1.json
   def show
