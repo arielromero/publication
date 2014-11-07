@@ -1,6 +1,6 @@
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h5><%= t('subscription.show.title')%>: <%= @subscription.campaign.to_label %>: <%= @subscription.member.to_label %>(<%= @subscription.created_at.to_date %>) </h5>
+    <h4><%= t('subscription.show.title')%>: <%= @subscription.campaign.to_label %>: <%= @subscription.member.to_label %>(<%= @subscription.created_at.to_date %>) </h4>
     <p id="notice"><%= notice %></p>
   </div>
   <div class="panel-body">  
@@ -22,9 +22,9 @@
 </div>
 
 <%# if @subscription.campaign.finish_at > Time.now  %>
-<div class="panel panel-success">
+<div class="panel panel-info">
   <div class="panel-heading">
-    <h5>Agregar Productos</h5>
+    <h4>Agregar Productos</h4>
   </div>
   <div class="panel-body"> 
     <%= simple_form_for @product_subscription, :html => { :class => 'form-horizontal' }, :method => :post  do |f| %>
@@ -38,7 +38,7 @@
   </div>
   
   <div class="panel-footer">
-            <%= f.button :submit, :class => "btn btn-success btn-rigth left-right", :id => "add_product_subscription"  %>
+            <%= f.button :submit, :class => "btn btn-primary btn-rigth left-right", :id => "add_product_subscription"  %>
   </div>
    <% end %>
 </div>

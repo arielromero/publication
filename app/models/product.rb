@@ -5,5 +5,5 @@ class Product < ActiveRecord::Base
   has_many :product_subscriptions  
   has_many :product_received
 
-  validates :name, :numbers, :abbreviation, :presence => true
+  validates :name, :numbers, :abbreviation, :by_direct_sale, :presence => true
 end

@@ -1,5 +1,5 @@
-<div class="panel panel-success">
-    <div class="panel-heading"><h5>Productos para entregar</h5></div>
+<div class="panel panel-info">
+    <div class="panel-heading"><h4>Productos para entregar</h4></div>
     <div class="panel-body">
       <table class="table table-striped">
         <tr>
@@ -23,13 +23,13 @@
       </table>
     </div>
     <div class='panel-footer'>
-     <%= link_to 'Entrega Todos', delivered_all_member_path(@member), :class => "btn btn-success "  %>
+     <%= link_to 'Entrega Todos', delivered_all_member_path(@member), :class => "btn btn-primary "  %>
     </div>
 </div>
 <br>
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h5><%= t('member.show.title')%></h5>
+    <h4><%= t('member.show.title')%></h4>
     <p id="notice"><%= notice %></p>  
   </div>
   <div class="panel-body">    
@@ -56,7 +56,7 @@
   </div>
   <div class="panel-footer">
   <%= link_to raw('<i class="icon-pencil icon-white"></i> ' + t('action.edit')), edit_member_path(@member), :class => 'btn btn-primary'%> 
-  <%= link_to raw('<i class="icon-list icon-white"></i> ' + t('action.show_all')), members_path, :class => 'btn btn-success' %> 
+  <%= link_to raw('<i class="icon-list icon-white"></i> ' + t('action.show_all')), members_path, :class => 'btn btn-primary' %> 
   </div>
 </div>  
 

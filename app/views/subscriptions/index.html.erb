@@ -1,6 +1,6 @@
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h5><%= t('subscription.index.title')%>: <%= @campaign.name  %></h5>
+    <h4><%= t('subscription.index.title')%>: <%= @campaign.name  %></h4>
      <form id="search_subscriptions_form" action="<%= search_campaign_subscriptions_url(@campaign) %>" method="get" >
       <%= text_field_tag 'search_param' %>
       <%= hidden_field_tag 'hidden_campaign_id', @campaign.id %>

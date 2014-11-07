@@ -7,7 +7,8 @@
 
     <h4>Materiales</h4>
     
-    <%= f.collection_check_boxes :product_ids, Product.all, :id, :name%>
+    <%= f.association :products, :as => :check_boxes  %>
+    <%#= f.collection_check_boxes :product_ids, Product.all, :id, :name, :input_html => {:class => 'in-line'}%>
       
   
   </div> 
