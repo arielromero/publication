@@ -38,7 +38,7 @@
   </div>
   
   <div class="panel-footer">
-            <%= f.button :submit, :class => "btn btn-primary btn-rigth left-right", :id => "add_product_subscription"  %>
+            <%= f.button :submit, :class => "btn btn-success btn-rigth left-right", :id => "add_product_subscription"  %>
   </div>
    <% end %>
 </div>
@@ -46,6 +46,6 @@
 
 <div class="line-separator"></div>
 <div class="btns">
-  <%= link_to t('action.back'), campaign_subscriptions_path(@campaign), :class => "btn btn-primary pull-left"  %>
-  <%= link_to 'Nueva suscripción', new_campaign_subscription_path, :class => "btn btn-primary"  %>
+  <%= link_to 'Nueva suscripción', new_campaign_subscription_path, :class => "btn btn-success"  %>
+  <%= link_to t('action.back'), campaign_subscriptions_path(@campaign), :class => "btn btn-primary "  %>
 <div>

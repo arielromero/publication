@@ -2,9 +2,8 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def index
-    @search = Member.search(params[:q])
-    @members = @search.result
-    @members = @members.page(params[:page]).per(10)
+    @members = Member.limit(10)
+    @members = @members.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,8 +13,11 @@ class MembersController < ApplicationController
 
 
   def search
-    @members = Member.where('last_name ilike ?', params[:params_search])
     
+    @members = Member.where("( lower(members.first_name) || ' ' || lower(members.last_name) ILIKE ? ) OR ( lower(members.last_name) || ' ' || lower(members.first_name) ILIKE ? )",  
+                                                    "%#{params[:search_param].downcase}%","%#{params[:search_param].downcase}%")
+    @members = @members.page(params[:page]).per(10)
+    render :partial => 'list'
   end
 
   def backordered

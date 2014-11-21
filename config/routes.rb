@@ -46,6 +46,8 @@ Publication::Application.routes.draw do
     end
     collection do
       get 'backordered'
+      get 'search'
+
     end
   end
 

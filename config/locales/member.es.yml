@@ -3,6 +3,8 @@ es:
     title: Miembros
     index:
       title: Lista de miembros
+    backordered:
+      title: Pendientes de entrega
     new:
       caption: Nuevo
       notice: El miembro fue creado correctamente

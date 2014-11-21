@@ -2,65 +2,24 @@
 <div class="panel panel-info">
   <div class="panel-heading">
     <h4><%= t('member.index.title')%></h4>
-    <%= search_form_for(@search, :html => {:class => "form-inline", :role => "form" }) do |f|%>
-    <div class='form-group '>
-     
-        <%= f.label :last_name_cont, "Apellido contiene"%>
-        <%= f.text_field :last_name_cont %>
-      
-       
-        <button type="submit", class= 'btn btn-info'>
-          <i class='icon-search icon-white'></i> Buscar
-        </button>
-        <br>
-        <%= link_to "Ver pendientes de entrega", backordered_members_path %>
-      
-      <% end %>
-    </div>
+    <form id="search_members_form" action="<%= search_members_url() %>" method="get" >
+      <%= text_field_tag 'search_param' %>
+    
+      <button type="submit" class="btn btn-primary">
+        <i class="glyphicon glyphicon-search "></i> <%= t('action.search')%>
+      </button><br>
+      <h4 id="error"></h4>
+       <%#= link_to "Ver pendientes de entrega", backordered_members_path %>
+    </form>
   </div>
   <div class="panel-body">
-    <%= paginate @members %>
-  <table class="table table-striped">
-    <tr>
-      <th><%= label_for('member.full_name')%></th>
-      <!-- <th><%= label_for('member.first_name')%></th> -->
-      <!-- <th><%= label_for('member.phone')%></th> -->
-      <!-- <th><%= label_for('member.email')%></th> -->
-      <th>Productos para entregar</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-
-  <% @members.each do |member| %>
-    <tr>
-      <td class="member_item"><%= member.to_label %></td>
-      <div id="member_additional_info_<%= member.id %>" class="data hide">
-        <h4>Datos Personales</h4>
-        <p>
-          <strong>Telefono: </strong><br>
-          <small><%= member.phone %></small>
-        </p>
-        <p>
-          <strong>Email: </strong><br>
-          <small><%= member.email %></small>
-        </p>
-        
-      </div>
-      <!-- <td><%= member.first_name%></td> -->
-      <!-- <td><%= member.phone %></td> -->
-      <!-- <td><%= member.email %></td> -->
-      <td><%= member.total_available_products %></td>
-      <td><i class="glyphicon glyphicon-eye-open"></i><%= link_to ' Entregas', member_path(member)   %></td> 
-      <td><i class="glyphicon glyphicon-edit"></i><%= link_to t('member.update.link'), edit_member_path(member) %></td>
-      <td><i class="glyphicon glyphicon-trash"></i><%= link_to t('member.delete.link'), member, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-  </table>
-</div>
-<div class="panel-footer">
-   <%= link_to t('member.new.caption'), new_member_path, :class => "btn btn-primary"  %>
-</div>
+    <div id="members_search_results">
+      <%= render 'members/list' %>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <%= link_to t('member.new.caption'), new_member_path, :class => "btn btn-primary"  %>
+  </div>
 </div>
 
 

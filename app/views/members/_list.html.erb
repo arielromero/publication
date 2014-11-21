@@ -1,9 +1,5 @@
-<div class="panel panel-info">
-  
-    <div class="panel-heading"><h4><%= t('member.backordered.title')%></h4></div>
-  
-  <div class="panel-body">
-  <table class="table table-striped">
+<%= paginate @members %>
+  <table class="table ">
     <tr>
       <th><%= label_for('member.full_name')%></th>
       <!-- <th><%= label_for('member.first_name')%></th> -->
@@ -40,8 +36,3 @@
     </tr>
   <% end %>
   </table>
-</div>
-<div class="panel-footer">
-   <%= link_to t('member.new.caption'), new_member_path, :class => "btn btn-primary"  %>
-</div>
-</div>
