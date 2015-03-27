@@ -4,6 +4,7 @@ class Campaign < ActiveRecord::Base
   has_many :subscriptions
   has_many :product_receiveds
   has_many :product_received_groups
+  default_scope order('begin_at desc')
 
   def to_label
   	name

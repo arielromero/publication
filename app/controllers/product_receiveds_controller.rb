@@ -3,8 +3,13 @@ class ProductReceivedsController < ApplicationController
   # GET /product_receiveds
   # GET /product_receiveds.json
   def index
-    @product_receiveds = ProductReceived.where(:campaign_id => @campaign.id)
-
+    
+    if params[:group_id] 
+      @product_receiveds = ProductReceived.where(:product_received_group_id => params[:group_id], :campaign_id => @campaign.id)
+      # hola
+    else
+      @product_receiveds = ProductReceived.where(:campaign_id => @campaign.id)  
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @product_receiveds }

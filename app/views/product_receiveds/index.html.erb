@@ -23,7 +23,7 @@
         <td><%= @campaign.subscriptions_for_products(product_received.product) %></td>
         <td><%= product_received.total_delivered %></td>
         <td><%= product_received.description %></td>
-        <td><%= product_received.product_received_group.description  %></td>
+        <td>   <%=link_to product_received.product_received_group.description, campaign_product_receiveds_path(@campaign, :group_id => product_received.product_received_group.id )   %></td>
         <td><%= product_received.received_at ? product_received.received_at.to_datetime.strftime('%d/%m/%Y') : ' ' %></td>
         <td><i class="glyphicon glyphicon-edit"></i>
             <%= link_to 'Modificar', edit_campaign_product_received_path(@campaign, product_received) %></td>

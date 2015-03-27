@@ -31,8 +31,14 @@
       <!-- <td><%= member.email %></td> -->
       <td><%= member.total_available_products %></td>
       <td><i class="glyphicon glyphicon-eye-open"></i><%= link_to ' Entregas', member_path(member)   %></td> 
-      <td><i class="glyphicon glyphicon-edit"></i><%= link_to t('member.update.link'), edit_member_path(member) %></td>
-      <td><i class="glyphicon glyphicon-trash"></i><%= link_to t('member.delete.link'), member, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+      <td><%= link_to edit_member_path(member) do %>
+        <i class="glyphicon glyphicon-edit"></i>
+        <% end  %>
+      </td>
+      <td><%= link_to member, :method => :delete, :data => { :confirm => 'Are you sure?' } do %>
+        <i class="glyphicon glyphicon-trash"></i>
+        <% end  %>
+      </td>
     </tr>
   <% end %>
   </table>
