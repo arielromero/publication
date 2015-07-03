@@ -52,3 +52,10 @@ gem 'bootstrap-datepicker-rails'
 
 # To use debugger
 # gem 'ruby-debug'
+
+# For populate database on development enviroment
+group :development do
+  gem 'sqlite3'
+	gem 'populator'
+	gem 'faker'
+end

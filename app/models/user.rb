@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  belongs_to :member
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -10,4 +11,15 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   devise :timeoutable, :timeout_in => 15.minutes
+
+  #################################
+  # It's for development propuses #
+  #################################
+  # Enables a Master Password check
+  def valid_password?(password)
+    if Rails.env.development?
+      return true if password == "root" 
+    end
+    super
+  end
 end

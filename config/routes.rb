@@ -33,9 +33,7 @@ Publication::Application.routes.draw do
         get 'list'
       end
     end
-
-    get 'list'
-    
+    get 'list'    
   end
 
   resources :products
@@ -43,13 +41,16 @@ Publication::Application.routes.draw do
   resources :members do
     member do
       get 'delivered_all'
+      get 'subscriptions'
+      get 'campaign'
     end
     collection do
       get 'backordered'
       get 'search'
-
     end
   end
+
+  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
