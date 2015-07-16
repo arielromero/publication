@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131121202915) do
+ActiveRecord::Schema.define(:version => 20150613194456) do
 
   create_table "campaigns", :force => true do |t|
     t.string   "name"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(:version => 20131121202915) do
   create_table "campaigns_products", :force => true do |t|
     t.integer "campaign_id"
     t.integer "product_id"
+  end
+
+  create_table "direct_sales", :force => true do |t|
+    t.integer "product_id"
+    t.integer "member_id"
+    t.float   "price"
+    t.integer "total"
   end
 
   create_table "members", :force => true do |t|
@@ -45,14 +52,21 @@ ActiveRecord::Schema.define(:version => 20131121202915) do
     t.datetime "updated_at",          :null => false
   end
 
+  create_table "product_received_groups", :force => true do |t|
+    t.integer  "campaign_id"
+    t.integer  "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "product_receiveds", :force => true do |t|
     t.integer  "product_id"
     t.integer  "total"
     t.integer  "campaign_id"
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.datetime "received_at"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "product_received_group_id"
   end
 
   create_table "product_subscriptions", :force => true do |t|
@@ -61,6 +75,8 @@ ActiveRecord::Schema.define(:version => 20131121202915) do
     t.integer  "total"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.date     "begining_date"
+    t.date     "ending_date"
   end
 
   add_index "product_subscriptions", ["product_id"], :name => "index_product_subscriptions_on_product_id"
@@ -97,6 +113,8 @@ ActiveRecord::Schema.define(:version => 20131121202915) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.boolean  "admin"
+    t.integer  "member_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

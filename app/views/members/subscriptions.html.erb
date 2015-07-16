@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-xs-3 col-md-3">
+    <div class="well well-sm">
+      <ul class="nav nav-pills nav-stacked">
+        <% @subscriptions.each do | subscription | %>
+        <li><%= link_to subscription.campaign.name, campaign_member_path(:id => current_user.member.id ,:campaign_id => subscription.campaign.id) %></li>
+        <% end -%>
+      </ul>
+    </div>
+  </div>
+  <div class="col-xs-9 col-md-9">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h4><%= "Mis subscripciones" %></h4>
+      </div>
+      <div class="panel-body">
+        <table class="table table-bordered">
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th colspan="<% if current_user.admin? %><%= "3" %><% else %><%= "1" %><% end -%>"></th>
+          </tr>
+
+          <% @subscriptions.first.product_subscriptions.each do |product_subscription| %>
+          <tr>
+            <td><%= product_subscription.product.name %></td>
+            <td><%= product_subscription.total %></td>
+            <td><%= link_to 'Solicitar cambio', product_subscription %></td>
+            <% if current_user.admin? %>
+              <td><%= link_to 'Edit', edit_product_subscription_path(product_subscription) %></td>
+              <td><%= link_to 'Destroy', product_subscription, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+            <% end -%>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>   
+  </div>
+</div>

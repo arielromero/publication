@@ -1,4 +1,6 @@
 class MembersController < ApplicationController
+  before_filter :find_member, :only => [:subscriptions, :campaign]
+
   # GET /members
   # GET /members.json
   def index
@@ -11,9 +13,18 @@ class MembersController < ApplicationController
     end
   end
 
+  def subscriptions
+    @subscriptions = @member.subscriptions
+  end
 
-  def search
-    
+  def campaign
+    @subscriptions = @member.subscriptions.where(:campaign_id => params[:campaign_id])
+
+    render 'subscriptions'
+  end
+
+
+  def search    
     @members = Member.where("( lower(members.first_name) || ' ' || lower(members.last_name) ILIKE ? ) OR ( lower(members.last_name) || ' ' || lower(members.first_name) ILIKE ? )",  
                                                     "%#{params[:search_param].downcase}%","%#{params[:search_param].downcase}%")
     @members = @members.page(params[:page]).per(10)
@@ -111,4 +122,16 @@ class MembersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+    def find_member
+      if current_user.admin? 
+        @member = Member.find params[:member_id]
+      elsif current_user.member.id == params[:id].to_i
+        @member = Member.find params[:id]
+      else
+        redirect_to current_user
+      end
+    end
+
 end

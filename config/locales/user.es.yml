@@ -1,0 +1,11 @@
+es:
+  user:
+    subscriptions:
+      title: Suscripciones
+
+  activerecord:
+    attributes:
+      user:
+        created_at: Fecha
+        email: Correo electrónico
+        password: Contraseña

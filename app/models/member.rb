@@ -1,5 +1,6 @@
 class Member < ActiveRecord::Base
   has_many :subscriptions
+  has_many :campaigns, :through => :subscriptions
   default_scope order('last_name')
   attr_accessible :address, :email, :first_name, :last_name, :phone
   validates :first_name, :last_name, :presence => true
